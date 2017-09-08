@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/angus/CLionProjects/poly/main.cpp
+iostream
+-
+poly.h
+/home/angus/CLionProjects/poly/poly.h
+
+/home/angus/CLionProjects/poly/poly.cpp
+iostream
+-
+poly.h
+/home/angus/CLionProjects/poly/poly.h
+
+/home/angus/CLionProjects/poly/poly.h
+

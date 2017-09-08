@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lesson01.dir/main.cpp.o CMakeFiles/lesson01.dir/tree.cpp.o CMakeFiles/lesson01.dir/stack.cpp.o  -o lesson01 
