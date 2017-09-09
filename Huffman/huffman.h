@@ -9,7 +9,8 @@ typedef struct Treenode{
     int parent;
     int left,right;
 }*HTree;
-typedef char* HC;
-void Huffcode(HTree &Tree,HC& Code,int* w,int n);
+typedef char** HC;
+void Huffcode(HTree &Tree,HC& Code,int n);
 void Select(HTree Tree,int n,int &s1,int &s2);
+HC TestTree();
 #endif //HUFFMAN_HUFFMAN_H
