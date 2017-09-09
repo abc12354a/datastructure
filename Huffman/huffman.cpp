@@ -6,17 +6,29 @@
 #include <iostream>
 #include <cstring>
 void Select(HTree Tree, int n, int &s1, int &s2) {
-    s1 = 1;
-    for(int i = 1;i<=n;++i){
+    s1 = 0;
+    for(int i = 0;i<n;++i){
         if(Tree[i].weight<Tree[s1].weight&&(Tree[i].parent==0))
             s1 = i;
     }
-    s2 = (s1+1)%n;
-    for(int i = 1;i<=n;++i){
-        if((Tree[i].weight<Tree[s1].weight)&&i!=s1&&(Tree[i].parent==0))
-            s1 = i;
+    s2 = 0;
+    for(int i = 0;i<n;++i){
+        if((Tree[i].weight<Tree[s2].weight)&&i!=s1&&(Tree[i].parent==0))
+            s2 = i;
     }
 }
+//void Test(my* Tree, int n, int &s1, int &s2) {
+//    s1 = 0;
+//    for(int i = 1;i<=n;++i){
+//        if(Tree[i].weight<Tree[s1].weight)
+//            s1 = i;
+//    }
+//    s2 = 0;
+//    for(int i = 1;i<=n;++i){
+//        if((Tree[i].weight<Tree[s2].weight)&&i!=s1)
+//            s2 = i;
+//    }
+//}
 void Huffcode(HTree &Tree, HC &Code, int n) {
     if(n<1)
         return;
@@ -40,7 +52,7 @@ void Huffcode(HTree &Tree, HC &Code, int n) {
     for(int k = n+1;k<=m;++k){
         int s1 = 0;
         int s2 = 0;
-        Select(Tree,k-1,s1,s2);
+        Select(Tree,k,s1,s2);
         Tree[s1].parent = k;
         Tree[s2].parent = k;
         Tree[k].weight = Tree[s1].weight+Tree[s2].weight;
@@ -50,7 +62,7 @@ void Huffcode(HTree &Tree, HC &Code, int n) {
     Code = new char*[n+1];
     auto cd = new char[n];
     cd[n-1] = '\0';
-    for(int i = 1;i<=n;++i){
+    for(int i = 0;i<n;++i){
         int start = n-1;
         int c = i;
         int f = Tree[i].parent;
@@ -60,7 +72,7 @@ void Huffcode(HTree &Tree, HC &Code, int n) {
             else
                 cd[--start] = '1';
         }
-        //remember to request blocks for elements of array;
+        //remember to make block request for elements of array;
         Code[i] = new char[n];
         strcpy(Code[i],&cd[start]);
     }
