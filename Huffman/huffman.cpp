@@ -7,8 +7,8 @@
 #include <cstring>
 //select function remand to fix;
 void Select(HTree Tree, int n, int &s1, int &s2) {
-    int m1 = 100;
-    int m2 = 100;
+    int m1 = MAXWEIGHT;
+    int m2 = MAXWEIGHT;
     s1 = s2 = 0;
     for(int j = 0;j<n;++j){
         if(Tree[j].weight<m1&&Tree[j].parent == 0){
@@ -41,19 +41,22 @@ void Huffcode(HTree &Tree, HC &Code, int n) {
     auto m = 2*n-1;
     Tree = new Treenode[m+1];
 //    auto p = Tree;
-    for(int i = 1;i<=n;++i)
+    for(int i = 0;i<n;++i)
     {
-        Tree[i-1].weight =11-i;
-        Tree[i-1].parent =0;
-        Tree[i-1].left =0;
-        Tree[i-1].right =0;
+        int Tweight = 0;
+        std::cout<<"plz input weight"<<std::endl;
+        std::cin>>Tweight;
+        Tree[i].weight =Tweight;
+        Tree[i].parent =0;
+        Tree[i].left =0;
+        Tree[i].right =0;
     }
-    for(int j = n+1;j<=m;++j)
+    for(int j = n;j<=m;++j)
     {
-        Tree[j-1].weight = 0;
-        Tree[j-1].parent =0;
-        Tree[j-1].left = 0;
-        Tree[j-1].right =0;
+        Tree[j].weight = 0;
+        Tree[j].parent = 0;
+        Tree[j].left = 0;
+        Tree[j].right = 0;
     }
     for(int k = n;k<m;++k){
         int s1 = 0;
@@ -90,7 +93,9 @@ void Huffcode(HTree &Tree, HC &Code, int n) {
 }
 
 HC TestTree() {
-    int CountN = 10;
+    std::cout<<"plz input size of data"<<std::endl;
+    int CountN = 0;
+    std::cin>>CountN;
     auto mytree = new Treenode;
     auto mycode = new char*;
     Huffcode(mytree,mycode,CountN);

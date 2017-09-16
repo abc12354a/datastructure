@@ -1,7 +1,7 @@
 //
 // Created by angus on 17-9-9.
 //
-
+#define MAXWEIGHT 1000
 #ifndef HUFFMAN_HUFFMAN_H
 #define HUFFMAN_HUFFMAN_H
 typedef struct Treenode{
@@ -17,4 +17,5 @@ void Huffcode(HTree &Tree,HC& Code,int n);
 void Select(HTree Tree,int n,int &s1,int &s2);
 HC TestTree();
 void Test(my* Tree, int n, int &s1, int &s2);
+void Decode(int* code);
 #endif //HUFFMAN_HUFFMAN_H

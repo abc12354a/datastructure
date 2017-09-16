@@ -63,7 +63,7 @@ begin					  //每秒测试一次(clk每秒)
 	 cy <= 1'b0;
 	 cg <= 1'b0;
 	 state <= mgcr;
-	 end
+	 endverilog
 	mycr:
 	 if(count == 5)
 	 begin
