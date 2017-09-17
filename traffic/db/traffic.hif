@@ -1,0 +1,192 @@
+Version 9.0 Build 132 02/25/2009 SJ Full Version
+41
+2959
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+divide
+# storage
+db|traffic.(1).cnf
+db|traffic.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+divide.v
+2d597a2f1a7b2ea0ea1c141d269c2b13
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+divide:inst1
+}
+# macro_sequence
+
+# end
+# entity
+seg
+# storage
+db|traffic.(3).cnf
+db|traffic.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+seg.v
+5b2e81763b1c93df0cfa82b2d9aa1cd
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+seg:inst9
+}
+# macro_sequence
+
+# end
+# entity
+Block1
+# storage
+db|traffic.(2).cnf
+db|traffic.(2).cnf
+# case_insensitive
+# source_file
+Block1.bdf
+1686935b15a8a3bbaa94f4db4a48de72
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+7402
+# storage
+db|traffic.(4).cnf
+db|traffic.(4).cnf
+# case_insensitive
+# source_file
+..|main|quartus|libraries|others|maxplus2|7402.bdf
+eac4b56b7c9821f9e4c373c4a07854
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+7402:inst10
+}
+# macro_sequence
+
+# end
+# entity
+traffic
+# storage
+db|traffic.(0).cnf
+db|traffic.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+traffic.v
+a8b1dcdf9eeb1114a70e64d488924e5
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+mgcr
+000
+PARAMETER_UNSIGNED_BIN
+DEF
+mycr
+001
+PARAMETER_UNSIGNED_BIN
+DEF
+mrcg
+010
+PARAMETER_UNSIGNED_BIN
+DEF
+mrcy
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+NOC
+100
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+traffic:inst
+}
+# macro_sequence
+
+# end
+# complete
+

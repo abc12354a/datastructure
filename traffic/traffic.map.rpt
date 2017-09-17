@@ -1,0 +1,452 @@
+Analysis & Synthesis report for traffic
+Sun Sep 17 23:21:29 2017
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |Block1|traffic:inst|state
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: traffic:inst
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Sep 17 23:21:29 2017    ;
+; Quartus II Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name               ; traffic                                  ;
+; Top-level Entity Name       ; Block1                                   ;
+; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 220                                      ;
+; Total pins                  ; 39                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                            ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Option                                                         ; Setting            ; Default Value      ;
++----------------------------------------------------------------+--------------------+--------------------+
+; Device                                                         ; EP1C3T144C8        ;                    ;
+; Top-level entity name                                          ; Block1             ; traffic            ;
+; Family name                                                    ; Cyclone            ; Stratix II         ;
+; Use Generated Physical Constraints File                        ; Off                ;                    ;
+; Use smart compilation                                          ; Off                ; Off                ;
+; Restructure Multiplexers                                       ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                            ; Off                ; Off                ;
+; Preserve fewer node names                                      ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                      ; Off                ; Off                ;
+; Verilog Version                                                ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                   ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                       ; Auto               ; Auto               ;
+; Safe State Machine                                             ; Off                ; Off                ;
+; Extract Verilog State Machines                                 ; On                 ; On                 ;
+; Extract VHDL State Machines                                    ; On                 ; On                 ;
+; Ignore Verilog initial constructs                              ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                     ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                 ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On                 ; On                 ;
+; Parallel Synthesis                                             ; Off                ; Off                ;
+; NOT Gate Push-Back                                             ; On                 ; On                 ;
+; Power-Up Don't Care                                            ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                   ; Off                ; Off                ;
+; Remove Duplicate Registers                                     ; On                 ; On                 ;
+; Ignore CARRY Buffers                                           ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                         ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                      ; Off                ; Off                ;
+; Ignore LCELL Buffers                                           ; Off                ; Off                ;
+; Ignore SOFT Buffers                                            ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                 ; Off                ; Off                ;
+; Optimization Technique                                         ; Balanced           ; Balanced           ;
+; Carry Chain Length                                             ; 70                 ; 70                 ;
+; Auto Carry Chains                                              ; On                 ; On                 ;
+; Auto Open-Drain Pins                                           ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                          ; Off                ; Off                ;
+; Auto ROM Replacement                                           ; On                 ; On                 ;
+; Auto RAM Replacement                                           ; On                 ; On                 ;
+; Auto Shift Register Replacement                                ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                  ; On                 ; On                 ;
+; Strict RAM Replacement                                         ; Off                ; Off                ;
+; Allow Synchronous Control Signals                              ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                         ; Off                ; Off                ;
+; Auto RAM Block Balancing                                       ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                              ; Off                ; Off                ;
+; Auto Resource Sharing                                          ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                             ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                  ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing            ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives              ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report             ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                             ; Off                ; Off                ;
+; Synchronization Register Chain Length                          ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                              ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100                ; 100                ;
+; Clock MUX Protection                                           ; On                 ; On                 ;
+; Block Design Naming                                            ; Auto               ; Auto               ;
+; Synthesis Effort                                               ; Auto               ; Auto               ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                             ; Medium             ; Medium             ;
++----------------------------------------------------------------+--------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                  ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
+; traffic.v                        ; yes             ; User Verilog HDL File              ; F:/Qutuars9.0/traffic/traffic.v                               ;
+; divide.v                         ; yes             ; User Verilog HDL File              ; F:/Qutuars9.0/traffic/divide.v                                ;
+; seg.v                            ; yes             ; User Verilog HDL File              ; F:/Qutuars9.0/traffic/seg.v                                   ;
+; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; F:/Qutuars9.0/traffic/Block1.bdf                              ;
+; 7402.bdf                         ; yes             ; Megafunction                       ; f:/qutuars9.0/main/quartus/libraries/others/maxplus2/7402.bdf ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 220   ;
+;     -- Combinational with no register       ; 161   ;
+;     -- Register only                        ; 19    ;
+;     -- Combinational with a register        ; 40    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 112   ;
+;     -- 3 input functions                    ; 43    ;
+;     -- 2 input functions                    ; 38    ;
+;     -- 1 input functions                    ; 6     ;
+;     -- 0 input functions                    ; 2     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 205   ;
+;     -- arithmetic mode                      ; 15    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 2     ;
+;     -- asynchronous clear/load mode         ; 52    ;
+;                                             ;       ;
+; Total registers                             ; 59    ;
+; Total logic cells in carry chains           ; 18    ;
+; I/O pins                                    ; 39    ;
+; Maximum fan-out node                        ; rst_n ;
+; Maximum fan-out                             ; 60    ;
+; Total fan-out                               ; 882   ;
+; Average fan-out                             ; 3.41  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name  ; Library Name ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------+--------------+
+; |Block1                    ; 220 (1)     ; 59           ; 0           ; 39   ; 0            ; 161 (1)      ; 19 (0)            ; 40 (0)           ; 18 (0)          ; 0 (0)      ; |Block1              ; work         ;
+;    |7402:inst10|           ; 1 (1)       ; 0            ; 0           ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Block1|7402:inst10  ; work         ;
+;    |divide:inst1|          ; 4 (4)       ; 4            ; 0           ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 3 (3)            ; 2 (2)           ; 0 (0)      ; |Block1|divide:inst1 ; work         ;
+;    |seg:inst9|             ; 107 (107)   ; 28           ; 0           ; 0    ; 0            ; 79 (79)      ; 18 (18)           ; 10 (10)          ; 0 (0)           ; 0 (0)      ; |Block1|seg:inst9    ; work         ;
+;    |traffic:inst|          ; 107 (107)   ; 27           ; 0           ; 0    ; 0            ; 80 (80)      ; 0 (0)             ; 27 (27)          ; 16 (16)         ; 0 (0)      ; |Block1|traffic:inst ; work         ;
++----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------+
+; State Machine - |Block1|traffic:inst|state                                 ;
++------------+------------+------------+------------+------------+-----------+
+; Name       ; state.mrcy ; state.mrcg ; state.mycr ; state.mgcr ; state.NOC ;
++------------+------------+------------+------------+------------+-----------+
+; state.mgcr ; 0          ; 0          ; 0          ; 0          ; 0         ;
+; state.mycr ; 0          ; 0          ; 1          ; 1          ; 0         ;
+; state.mrcg ; 0          ; 1          ; 0          ; 1          ; 0         ;
+; state.mrcy ; 1          ; 0          ; 0          ; 1          ; 0         ;
+; state.NOC  ; 0          ; 0          ; 0          ; 1          ; 1         ;
++------------+------------+------------+------------+------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                    ;
++-----------------------------------------------------+-------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal     ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------+------------------------+
+; seg:inst9|seg_reg[0]                                ; seg:inst9|seg_reg[0]~1  ; yes                    ;
+; seg:inst9|seg_reg[1]                                ; seg:inst9|seg_reg[0]~1  ; yes                    ;
+; seg:inst9|seg_reg[2]                                ; seg:inst9|seg_reg[0]~1  ; yes                    ;
+; seg:inst9|seg_reg[3]                                ; seg:inst9|seg_reg[0]~1  ; yes                    ;
+; seg:inst9|seg_reg2.0001_624                         ; seg:inst9|WideOr22      ; yes                    ;
+; seg:inst9|seg_reg2.0010_617                         ; seg:inst9|WideOr22      ; yes                    ;
+; seg:inst9|seg_reg2.0000_630                         ; GND                     ; yes                    ;
+; seg:inst9|seg_reg2.0011_610                         ; seg:inst9|WideOr22      ; yes                    ;
+; seg:inst9|seg_reg3[0]                               ; seg:inst9|seg_reg3[0]~1 ; yes                    ;
+; seg:inst9|seg_reg3[1]                               ; seg:inst9|seg_reg3[0]~1 ; yes                    ;
+; seg:inst9|seg_reg3[2]                               ; seg:inst9|seg_reg3[0]~1 ; yes                    ;
+; seg:inst9|seg_reg3[3]                               ; seg:inst9|seg_reg3[0]~1 ; yes                    ;
+; seg:inst9|seg_reg4.0001_728                         ; seg:inst9|WideOr6       ; yes                    ;
+; seg:inst9|seg_reg4.0010_721                         ; seg:inst9|WideOr6       ; yes                    ;
+; seg:inst9|seg_reg4.0000_734                         ; GND                     ; yes                    ;
+; seg:inst9|seg_reg4.0011_714                         ; seg:inst9|WideOr6       ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                         ;                        ;
++-----------------------------------------------------+-------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; traffic:inst|state~31                  ; Lost fanout        ;
+; traffic:inst|state~32                  ; Lost fanout        ;
+; divide:inst1|cnt[3..31]                ; Lost fanout        ;
+; Total Number of Removed Registers = 31 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 59    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 2     ;
+; Number of registers using Asynchronous Clear ; 52    ;
+; Number of registers using Asynchronous Load  ; 28    ;
+; Number of registers using Clock Enable       ; 27    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; traffic:inst|count_c[1]                ; 12      ;
+; traffic:inst|count_c[4]                ; 10      ;
+; traffic:inst|count_c[3]                ; 11      ;
+; traffic:inst|count_c[2]                ; 11      ;
+; traffic:inst|count[4]                  ; 10      ;
+; traffic:inst|count[3]                  ; 11      ;
+; traffic:inst|count[0]                  ; 8       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |Block1|traffic:inst|count[1]   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|traffic:inst|count_c[5] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Block1|traffic:inst|count[3]   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|traffic:inst|count[4]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: traffic:inst ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; mgcr           ; 000   ; Unsigned Binary                  ;
+; mycr           ; 001   ; Unsigned Binary                  ;
+; mrcg           ; 010   ; Unsigned Binary                  ;
+; mrcy           ; 011   ; Unsigned Binary                  ;
+; NOC            ; 100   ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sun Sep 17 23:21:28 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off traffic -c traffic
+Info: Found 1 design units, including 1 entities, in source file traffic.v
+    Info: Found entity 1: traffic
+Warning: Entity "divide" obtained from "F:/Qutuars9.0/traffic/divide.v" instead of from Quartus II megafunction library
+Info: Found 1 design units, including 1 entities, in source file divide.v
+    Info: Found entity 1: divide
+Info: Found 1 design units, including 1 entities, in source file seg.v
+    Info: Found entity 1: seg
+Info: Found 1 design units, including 1 entities, in source file Block1.bdf
+    Info: Found entity 1: Block1
+Info: Elaborating entity "Block1" for the top level hierarchy
+Warning: Block or symbol "seg" of instance "inst9" overlaps another block or symbol
+Info: Elaborating entity "traffic" for hierarchy "traffic:inst"
+Warning (10036): Verilog HDL or VHDL warning at traffic.v(16): object "m" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at traffic.v(17): object "c" assigned a value but never read
+Info: Elaborating entity "divide" for hierarchy "divide:inst1"
+Info: Elaborating entity "seg" for hierarchy "seg:inst9"
+Warning (10272): Verilog HDL Case Statement warning at seg.v(134): case item expression covers a value already covered by a previous case item
+Warning (10270): Verilog HDL Case Statement warning at seg.v(23): incomplete case statement has no default case item
+Warning (10230): Verilog HDL assignment warning at seg.v(144): truncated value with size 8 to match size of target (4)
+Warning (10240): Verilog HDL Always Construct warning at seg.v(19): inferring latch(es) for variable "seg_reg3", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at seg.v(19): inferring latch(es) for variable "seg_reg4", which holds its previous value in one or more paths through the always construct
+Warning (10270): Verilog HDL Case Statement warning at seg.v(151): incomplete case statement has no default case item
+Warning (10230): Verilog HDL assignment warning at seg.v(272): truncated value with size 8 to match size of target (4)
+Warning (10240): Verilog HDL Always Construct warning at seg.v(147): inferring latch(es) for variable "seg_reg", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at seg.v(147): inferring latch(es) for variable "seg_reg2", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "seg_reg2.1001" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.1000" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.0111" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.0110" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.0101" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.0100" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.0011" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.0010" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.0001" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg2.0000" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg[0]" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg[1]" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg[2]" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg[3]" at seg.v(147)
+Info (10041): Inferred latch for "seg_reg4.1001" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.1000" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.0111" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.0110" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.0101" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.0100" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.0011" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.0010" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.0001" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg4.0000" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg3[0]" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg3[1]" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg3[2]" at seg.v(19)
+Info (10041): Inferred latch for "seg_reg3[3]" at seg.v(19)
+Info: Elaborating entity "7402" for hierarchy "7402:inst10"
+Info: Elaborated megafunction instantiation "7402:inst10"
+Warning: Latch seg:inst9|seg_reg[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[0]
+Warning: Latch seg:inst9|seg_reg[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[1]
+Warning: Latch seg:inst9|seg_reg[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[2]
+Warning: Latch seg:inst9|seg_reg[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[3]
+Warning: Latch seg:inst9|seg_reg2.0001_624 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[7]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count[7]
+Warning: Latch seg:inst9|seg_reg2.0010_617 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[7]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count[7]
+Warning: Latch seg:inst9|seg_reg2.0011_610 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[7]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count[7]
+Warning: Latch seg:inst9|seg_reg3[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[0]
+Warning: Latch seg:inst9|seg_reg3[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[1]
+Warning: Latch seg:inst9|seg_reg3[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[2]
+Warning: Latch seg:inst9|seg_reg3[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[3]
+Warning: Latch seg:inst9|seg_reg4.0001_728 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[7]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count_c[7]
+Warning: Latch seg:inst9|seg_reg4.0010_721 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[7]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count_c[7]
+Warning: Latch seg:inst9|seg_reg4.0011_714 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[7]
+    Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count_c[7]
+Info: Registers with preset signals will power-up high
+Info: 31 registers lost all their fanouts during netlist optimizations. The first 31 are displayed below.
+    Info: Register "traffic:inst|state~31" lost all its fanouts during netlist optimizations.
+    Info: Register "traffic:inst|state~32" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "divide:inst1|cnt[31]" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file F:/Qutuars9.0/traffic/traffic.map.smsg
+Info: Implemented 259 device resources after synthesis - the final resource count might be different
+    Info: Implemented 5 input pins
+    Info: Implemented 34 output pins
+    Info: Implemented 220 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Peak virtual memory: 248 megabytes
+    Info: Processing ended: Sun Sep 17 23:21:29 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/Qutuars9.0/traffic/traffic.map.smsg.
+
+
