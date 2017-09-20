@@ -1,9 +1,13 @@
 #include <iostream>
 #include "huffman.h"
+#include <cstring>
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    auto code = TestTree();
-
+    auto length = 0;
+    auto code = TestTree(length);
+//    for(int i = 0;i<length;i++){
+//        std::cout<<code[i]<<" ";
+//    }
 //    std::cout<<*code<<" ";
 //    code++;
 //    std::cout<<*code<<" ";
