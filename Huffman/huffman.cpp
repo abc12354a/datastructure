@@ -90,22 +90,36 @@ void Huffcode(HTree &Tree, HC &Code, int n, int* w) {
     }
 }
 
-HC TestTree(int &length) {
-    std::cout<<"input data you want to encode"<<std::endl;
-    auto data = new char;
-    std::cin>>data;
-    int* w = new int;
-    auto count = Count(data,w);
+HC TestTree(int &length,char* data,Hdict dict) {
+    auto w = new int;
+    length = strlen(data)-1;
+    auto ChList = new int;
     auto T = new Treenode;
     auto Code = new char*;
+    auto RCode = new char*;
+    auto RCode_T = RCode;
+    auto count = Count(data,w,ChList);
     Huffcode(T,Code,count,w);
-    return  Code;
+    for(int i = 0;i<count;i++){
+        dict[i].value = ChList[i];
+        dict[i].code = Code[i];
+    }
+    for(int i = 0;i<strlen(data)-1;i++){
+        for(int j = 0;j<count;j++){
+            if(data[i] == ChList[j]){
+                *RCode = Code[j];
+//                strcpy(*RCode,Code[j]);
+                RCode++;
+            }
+        }
+    }
+    return  RCode_T;
 }
 /*
  * 每一个字母对应weight不同，构建一个辅助数组?
  * 超级大错误,MMP!
  */
-int Count(char *X, int *w) {
+int Count(char *X, int *w,int* ChList) {
     int num[256] = {0};
     auto count = 0;
     char ch;
@@ -116,8 +130,10 @@ int Count(char *X, int *w) {
     for(int i = 0;i<=255;++i){
         if(num[i]!=0) {
             *w = num[i];
-            w++;
+            *ChList = i;
+            ChList++;
             count++;
+            w++;
         }
     }
     return count;

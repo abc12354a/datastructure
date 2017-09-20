@@ -17,10 +17,10 @@ cstring
 /home/angus/CLionProjects/Huffman/huffman.h
 
 /home/angus/CLionProjects/Huffman/main.cpp
+cstring
+-
 iostream
 -
 huffman.h
 /home/angus/CLionProjects/Huffman/huffman.h
-cstring
--
 

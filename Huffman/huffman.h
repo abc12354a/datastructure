@@ -9,14 +9,14 @@ typedef struct Treenode{
     int parent;
     int left,right;
 }*HTree;
-struct my{
-    int weight;
-};
+typedef struct dict{
+    int value;
+    char* code;
+}*Hdict;
 typedef char** HC;
 void Huffcode(HTree &Tree,HC& Code,int n, int* w);
 void Select(HTree Tree,int n,int &s1,int &s2);
-HC TestTree(int &length);
-void Test(my* Tree, int n, int &s1, int &s2);
+HC TestTree(int &length,char* data,Hdict Dict);
 void Decode(int* code);
-int Count(char* X, int* w);
+int Count(char* X, int* w,int* ChList);
 #endif //HUFFMAN_HUFFMAN_H
