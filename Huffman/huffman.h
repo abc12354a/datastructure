@@ -13,9 +13,10 @@ struct my{
     int weight;
 };
 typedef char** HC;
-void Huffcode(HTree &Tree,HC& Code,int n);
+void Huffcode(HTree &Tree,HC& Code,int n, int* w);
 void Select(HTree Tree,int n,int &s1,int &s2);
 HC TestTree();
 void Test(my* Tree, int n, int &s1, int &s2);
 void Decode(int* code);
+int Count(char* X, int* w);
 #endif //HUFFMAN_HUFFMAN_H

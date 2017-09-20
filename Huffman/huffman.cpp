@@ -35,7 +35,7 @@ void Select(HTree Tree, int n, int &s1, int &s2) {
 //            s2 = i;
 //    }
 //}
-void Huffcode(HTree &Tree, HC &Code, int n) {
+void Huffcode(HTree &Tree, HC &Code, int n, int* w) {
     if(n<1)
         return;
     auto m = 2*n-1;
@@ -43,10 +43,7 @@ void Huffcode(HTree &Tree, HC &Code, int n) {
 //    auto p = Tree;
     for(int i = 0;i<n;++i)
     {
-        int Tweight = 0;
-        std::cout<<"plz input weight"<<std::endl;
-        std::cin>>Tweight;
-        Tree[i].weight =Tweight;
+        Tree[i].weight = w[i];
         Tree[i].parent =0;
         Tree[i].left =0;
         Tree[i].right =0;
@@ -71,7 +68,7 @@ void Huffcode(HTree &Tree, HC &Code, int n) {
     }
     //std::cout<<std::endl;
     for(int i = 0;i<=m;i++){
-       // std::cout<<"第"<<i<<"个"<<Tree[i].weight<<" "<<Tree[i].parent<<"   ";
+       std::cout<<"第"<<i<<"个"<<Tree[i].weight<<" "<<Tree[i].parent<<"   ";
     }
     Code = new char*[n+1];
     auto cd = new char[n];
@@ -93,11 +90,32 @@ void Huffcode(HTree &Tree, HC &Code, int n) {
 }
 
 HC TestTree() {
-    std::cout<<"plz input size of data"<<std::endl;
-    int CountN = 0;
-    std::cin>>CountN;
-    auto mytree = new Treenode;
-    auto mycode = new char*;
-    Huffcode(mytree,mycode,CountN);
-    return  mycode;
+    std::cout<<"input data you want to encode"<<std::endl;
+    auto data = new char;
+    std::cin>>data;
+    int* w = new int;
+    auto count = Count(data,w);
+    auto T = new Treenode;
+    int N = strlen(data);
+    auto Code = new char*;
+    Huffcode(T,Code,N-1,w);
+    return  Code;
+}
+
+int Count(char *X, int *w) {
+    int num[256] = {0};
+    int count = 0;
+    char ch;
+    for(int i = 0;X[i]!='@';i++){
+        ch = X[i];
+        num[ch]++;
+    }
+    for(int i = 0;i<=255;++i){
+        if(num[i]!=0) {
+            *w = num[i];
+            w++;
+            count++;
+        }
+    }
+    return count;
 }
