@@ -90,15 +90,15 @@ void Huffcode(HTree &Tree, HC &Code, int n, int* w) {
     }
 }
 
-HC TestTree(int &length,char* data,Hdict dict) {
+HC TestTree(int &length,char* data,Hdict &dict) {
     auto w = new int;
-    length = strlen(data)-1;
-    auto ChList = new int;
+    auto ChList = new char;
     auto T = new Treenode;
     auto Code = new char*;
     auto RCode = new char*;
     auto RCode_T = RCode;
     auto count = Count(data,w,ChList);
+    length = count;
     Huffcode(T,Code,count,w);
     for(int i = 0;i<count;i++){
         dict[i].value = ChList[i];
@@ -119,7 +119,7 @@ HC TestTree(int &length,char* data,Hdict dict) {
  * 每一个字母对应weight不同，构建一个辅助数组?
  * 超级大错误,MMP!
  */
-int Count(char *X, int *w,int* ChList) {
+int Count(char *X, int *w,char* ChList) {
     int num[256] = {0};
     auto count = 0;
     char ch;

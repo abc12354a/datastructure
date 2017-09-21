@@ -62,7 +62,7 @@ always @(posedge clk or posedge set)
                                     if(count == 1)
                                         begin
                                             state <= NOC;
-                                            count_c <= 8'd99;
+                                            count_c <= 8'd0;
                                             count <= 8'd0;
                                         end
                                     else
@@ -111,7 +111,7 @@ always @(posedge clk or posedge set)
                                     if(count_c == 1)
                                         begin
                                             state <= NOC;
-                                            count_c <= 8'd99;
+                                            count_c <= 8'd0;
                                             count <= 8'd0;
                                         end
                                     else
@@ -157,26 +157,9 @@ always @(posedge clk or posedge set)
                         begin
                             if(cs == 0)
                                 begin
-                                    if(count_c == 1)
-                                        begin
-                                            state <= NOC;
-                                            count_c <= 8'd99;
-                                            count <= 8'd0;
-                                        end
-                                    else
-                                        begin
-                                            count <= count - 1'b1;
-                                            count_c	<= count_c - 1'b1;
-                                            m <= 3'b100;
-                                            c <= 3'b001;
-                                            mr <= 1'b1;
-                                            my <= 1'b0;
-                                            mg <= 1'b0;
-                                            cy <= 1'b0;
-                                            cr <= 1'b0;
-                                            cg <= 1'b1;
-                                            state <= mrcg;
-                                        end
+                                    count <= 8'd25;
+                                    count_c <= 8'd30;
+                                    state <= mgcr;
                                 end
                             else
                                 begin
@@ -209,7 +192,7 @@ always @(posedge clk or posedge set)
                                     if(count_c == 1)
                                         begin
                                             state <= NOC;
-                                            count_c <= 8'd99;
+                                            count_c <= 8'd0;
                                             count <= 8'd0;
                                         end
                                     else

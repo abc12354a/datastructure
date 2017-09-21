@@ -131,7 +131,7 @@ always@(data2)
 							seg_reg3 <= 8;
 							seg_reg4 <= 9;
 						end
-					98:
+					99:
 						begin
 							seg_reg3 <= 9;
 							seg_reg4 <= 9;

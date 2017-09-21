@@ -1,8 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="traffic">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|divide:inst1|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_lsh.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|traffic:inst|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_9rh.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Block1|traffic:inst|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_9rh.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

@@ -2,7 +2,7 @@ Version:
 	9.0 Build 132 02/25/2009 SJ Full Version
 
 Chip Device Options:
-	Device Name:	EP1C3T144C8
+	Device Name:	EP1C6Q240C8
 	Device JTAG code:	ffffffff
 	Programming_mode:	Active Serial Configuration
 	NWS_NRS_NCS:	UNRESERVED
@@ -40,10 +40,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|count_c[5]~48	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add1~25	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Add1~33	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count[1]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [SYNCH_DATA]	  cs~_wirecell	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count_c[5]~49	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: NO ITERM
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: [SCLR]	DISCONNECTED
@@ -56,7 +56,7 @@ Chip Device Options:
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
 		0: NONE
-		1: [REGOUT]	traffic:inst|count_c[6]	LIT INDEX 0 FANOUTS 7 REGED POS
+		1: [REGOUT]	traffic:inst|count_c[6]	LIT INDEX 0 FANOUTS 10 REGED POS
 		2: NONE
 		3: NONE
 		4: NONE
@@ -66,7 +66,7 @@ Chip Device Options:
 		synch_mode                     = on
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 5544
+		lut_mask                       = 2222
 		output_mode                    = reg_only
 
 
@@ -81,10 +81,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|count_c[5]~48	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add1~27	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Add1~35	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count[1]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [SYNCH_DATA]	  cs~_wirecell	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count_c[5]~49	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: NO ITERM
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: [SCLR]	DISCONNECTED
@@ -97,7 +97,7 @@ Chip Device Options:
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
 		0: NONE
-		1: [REGOUT]	traffic:inst|count_c[5]	LIT INDEX 0 FANOUTS 7 REGED POS
+		1: [REGOUT]	traffic:inst|count_c[5]	LIT INDEX 0 FANOUTS 8 REGED POS
 		2: NONE
 		3: NONE
 		4: NONE
@@ -107,7 +107,7 @@ Chip Device Options:
 		synch_mode                     = on
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 5544
+		lut_mask                       = 2222
 		output_mode                    = reg_only
 
 
@@ -122,7 +122,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
@@ -131,13 +131,13 @@ Chip Device Options:
 		7: NO ITERM
 		8: NO ITERM
 		9: NO ITERM
-		10: NO ITERM
+		10: [CIN]	  traffic:inst|Add1~30	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		11: NO ITERM
 		12: NO ITERM
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Add1~21	LIT INDEX 0 FANOUTS 4
+		0: [COMBOUT]	traffic:inst|Add1~21	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: [COUT]	traffic:inst|Add1~22	LIT INDEX 0 FANOUTS 1
 		3: NONE
@@ -147,8 +147,9 @@ Chip Device Options:
 		operation_mode                 = arithmetic
 		synch_mode                     = off
 		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 55aa
+		sum_lutc_input                 = cin
+		lut_mask                       = 5a0a
+		cin_used                       = true
 		output_mode                    = comb_only
 
 
@@ -163,7 +164,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
@@ -180,16 +181,16 @@ Chip Device Options:
 	OUTPUTS (Int. Connections):
 		0: [COMBOUT]	traffic:inst|Add1~23	LIT INDEX 0 FANOUTS 1
 		1: NONE
-		2: NONE
+		2: [COUT]	traffic:inst|Add1~24	LIT INDEX 0 FANOUTS 1
 		3: NONE
 		4: NONE
 
 	PARAMETER LIST:
-		operation_mode                 = normal
+		operation_mode                 = arithmetic
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = cin
-		lut_mask                       = a5a5
+		lut_mask                       = a55f
 		cin_used                       = true
 		output_mode                    = comb_only
 
@@ -205,7 +206,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
@@ -231,7 +232,7 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = cin
-		lut_mask                       = 5aaf
+		lut_mask                       = 5a0a
 		cin_used                       = true
 		output_mode                    = comb_only
 
@@ -247,7 +248,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
@@ -256,13 +257,13 @@ Chip Device Options:
 		7: NO ITERM
 		8: NO ITERM
 		9: NO ITERM
-		10: [CIN]	  traffic:inst|Add1~32	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [CIN]	  traffic:inst|Add1~22	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		11: NO ITERM
 		12: NO ITERM
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Add1~27	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|Add1~27	LIT INDEX 0 FANOUTS 3
 		1: NONE
 		2: [COUT]	traffic:inst|Add1~28	LIT INDEX 0 FANOUTS 1
 		3: NONE
@@ -273,7 +274,7 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = cin
-		lut_mask                       = a505
+		lut_mask                       = a55f
 		cin_used                       = true
 		output_mode                    = comb_only
 
@@ -289,7 +290,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
@@ -298,13 +299,13 @@ Chip Device Options:
 		7: NO ITERM
 		8: NO ITERM
 		9: NO ITERM
-		10: [CIN]	  traffic:inst|Add1~22	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
 		11: NO ITERM
 		12: NO ITERM
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Add1~29	LIT INDEX 0 FANOUTS 3
+		0: [COMBOUT]	traffic:inst|Add1~29	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: [COUT]	traffic:inst|Add1~30	LIT INDEX 0 FANOUTS 1
 		3: NONE
@@ -314,9 +315,8 @@ Chip Device Options:
 		operation_mode                 = arithmetic
 		synch_mode                     = off
 		register_cascade_mode          = off
-		sum_lutc_input                 = cin
-		lut_mask                       = 5a0a
-		cin_used                       = true
+		sum_lutc_input                 = datac
+		lut_mask                       = 55aa
 		output_mode                    = comb_only
 
 
@@ -331,7 +331,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
@@ -348,16 +348,16 @@ Chip Device Options:
 	OUTPUTS (Int. Connections):
 		0: [COMBOUT]	traffic:inst|Add1~31	LIT INDEX 0 FANOUTS 1
 		1: NONE
-		2: [COUT]	traffic:inst|Add1~32	LIT INDEX 0 FANOUTS 1
+		2: NONE
 		3: NONE
 		4: NONE
 
 	PARAMETER LIST:
-		operation_mode                 = arithmetic
+		operation_mode                 = normal
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = cin
-		lut_mask                       = a55f
+		lut_mask                       = a5a5
 		cin_used                       = true
 		output_mode                    = comb_only
 
@@ -373,7 +373,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
@@ -399,7 +399,7 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = cin
-		lut_mask                       = 5a0a
+		lut_mask                       = 5aaf
 		cin_used                       = true
 		output_mode                    = comb_only
 
@@ -415,7 +415,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: NO ITERM
 		4: NO ITERM
@@ -424,13 +424,13 @@ Chip Device Options:
 		7: NO ITERM
 		8: NO ITERM
 		9: NO ITERM
-		10: [CIN]	  traffic:inst|Add1~30	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: [CIN]	  traffic:inst|Add1~24	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		11: NO ITERM
 		12: NO ITERM
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Add1~35	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|Add1~35	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: [COUT]	traffic:inst|Add1~36	LIT INDEX 0 FANOUTS 1
 		3: NONE
@@ -441,7 +441,7 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = cin
-		lut_mask                       = a55f
+		lut_mask                       = a505
 		cin_used                       = true
 		output_mode                    = comb_only
 
@@ -875,10 +875,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|mr~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|mr~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|mr~11	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|mr~12	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|mr~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|mr~10	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|mr~13	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|mr~14	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -918,7 +918,7 @@ Chip Device Options:
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  traffic:inst|my~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|my	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|mr~10	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|mr~12	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|my~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
@@ -932,7 +932,7 @@ Chip Device Options:
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
 		0: NONE
-		1: [REGOUT]	traffic:inst|my	LIT INDEX 0 FANOUTS 3 REGED POS
+		1: [REGOUT]	traffic:inst|my	LIT INDEX 0 FANOUTS 4 REGED POS
 		2: NONE
 		3: NONE
 		4: NONE
@@ -1039,10 +1039,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|cy~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|cy~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|cy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|mr~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|mr~10	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|mr~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|mr~12	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -1082,7 +1082,7 @@ Chip Device Options:
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  traffic:inst|cg~5	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|cg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|mr~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|mr~11	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|my~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
@@ -1408,7 +1408,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg2.0001_624	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg2.0001_625	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
@@ -1490,7 +1490,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg2.0010_617	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg2.0010_618	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
@@ -1531,7 +1531,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg2.0001_624	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg2.0001_625	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
@@ -1572,8 +1572,8 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg2.0010_617	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg2.0000_630	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg2.0010_618	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg2.0000_631	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 		5: [ACLR]	~ !(seg:inst9|seg[6]~0)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -1613,10 +1613,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg2.0001_624	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg2.0010_617	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg2.0001_625	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg2.0010_618	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  seg:inst9|seg_reg2.0011_610	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  seg:inst9|seg_reg2.0011_611	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(seg:inst9|seg[6]~0)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: [ALOAD]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		7: NO ITERM
@@ -1654,8 +1654,8 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg2.0001_624	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg2.0000_630	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg2.0001_625	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg2.0000_631	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 		5: [ACLR]	~ !(seg:inst9|seg[6]~0)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -1982,7 +1982,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg4.0001_728	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg4.0001_729	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
@@ -2064,7 +2064,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg4.0010_721	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg4.0010_722	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
@@ -2105,7 +2105,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg4.0001_728	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg4.0001_729	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
@@ -2146,8 +2146,8 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg4.0010_721	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg4.0000_734	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg4.0010_722	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg4.0000_735	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 		5: [ACLR]	~ !(seg:inst9|seg[6]~0)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -2187,10 +2187,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg4.0001_728	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg4.0010_721	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg4.0001_729	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg4.0010_722	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  seg:inst9|seg_reg4.0011_714	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  seg:inst9|seg_reg4.0011_715	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(seg:inst9|seg[6]~0)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: [ALOAD]	  rst_n	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		7: NO ITERM
@@ -2228,8 +2228,8 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  seg:inst9|seg_reg4.0001_728	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg4.0000_734	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg4.0001_729	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg4.0000_735	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [ASYNCH_DATA]	  VCC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 		5: [ACLR]	~ !(seg:inst9|seg[6]~0)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -2269,9 +2269,9 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector3~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Selector3~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
 		4: [DATAD]	  traffic:inst|state~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
@@ -2285,7 +2285,7 @@ Chip Device Options:
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
 		0: NONE
-		1: [REGOUT]	traffic:inst|state.mrcy	LIT INDEX 0 FANOUTS 20 REGED POS
+		1: [REGOUT]	traffic:inst|state.mrcy	LIT INDEX 0 FANOUTS 17 REGED POS
 		2: NONE
 		3: NONE
 		4: NONE
@@ -2295,12 +2295,12 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 88f8
+		lut_mask                       = aaee
 		output_mode                    = reg_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|mr~6 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~8 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 91
 	Atom Type: stratix_lcell
@@ -2325,7 +2325,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|mr~6	LIT INDEX 0 FANOUTS 4
+		0: [COMBOUT]	traffic:inst|mr~8	LIT INDEX 0 FANOUTS 4
 		1: NONE
 		2: NONE
 		3: NONE
@@ -2341,7 +2341,7 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|count_c[0] -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|count_c[1] -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 93
 	Atom Type: stratix_lcell
@@ -2351,133 +2351,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Selector12~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector12~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Selector12~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector12~5	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: [ENA]	  7402:inst10|4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: NONE
-		1: [REGOUT]	traffic:inst|count_c[0]	LIT INDEX 0 FANOUTS 7 REGED POS
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = fffe
-		output_mode                    = reg_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count_c[7] -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 94
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Add1~23	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: NO ITERM
-		3: [DATAC]	  traffic:inst|cy~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count[1]~37	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: [ENA]	  7402:inst10|4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: NONE
-		1: [REGOUT]	traffic:inst|count_c[7]	LIT INDEX 0 FANOUTS 8 REGED POS
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 000a
-		output_mode                    = reg_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|Equal1~0 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 95
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: NO ITERM
-		2: [DATAB]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Equal1~0	LIT INDEX 0 FANOUTS 7
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 0003
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count_c[1] -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 96
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Selector11~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Add1~29	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Add1~21	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector11~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count[1]~36	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector12~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -2500,14 +2377,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 5755
+		lut_mask                       = f531
 		output_mode                    = reg_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|count_c[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 97
+	Atom Id: 94
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -2515,9 +2392,9 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Add1~31	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Add1~23	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count[4]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count[4]~40	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|Selector8~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
@@ -2548,7 +2425,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|count_c[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 98
+	Atom Id: 95
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -2556,9 +2433,9 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Selector9~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector9~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Add1~33	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Selector17~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector9~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Add1~25	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
@@ -2589,7 +2466,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|count_c[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 99
+	Atom Id: 96
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -2598,9 +2475,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  traffic:inst|Selector10~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Selector10~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector10~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector10~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Selector10~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector10~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -2623,14 +2500,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 1500
+		lut_mask                       = 0001
 		output_mode                    = reg_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Equal1~1 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Equal1~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 100
+	Atom Id: 97
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -2653,7 +2530,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Equal1~1	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|Equal1~0	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -2669,6 +2546,129 @@ Chip Device Options:
 
 
 - ATOM ------------------------
+	ATOM_NAME: traffic:inst|count_c[0] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 98
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Add1~29	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Selector12~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector12~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  7402:inst10|4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	traffic:inst|count_c[0]	LIT INDEX 0 FANOUTS 6 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = ffa8
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|count_c[7] -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 99
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Add1~31	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: [DATAC]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count[1]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: [ENA]	  7402:inst10|4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: NONE
+		1: [REGOUT]	traffic:inst|count_c[7]	LIT INDEX 0 FANOUTS 9 REGED POS
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 000a
+		output_mode                    = reg_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|Equal1~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 100
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: NO ITERM
+		2: [DATAB]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|Equal1~1	LIT INDEX 0 FANOUTS 6
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0003
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
 	ATOM_NAME: traffic:inst|Equal1~2 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 101
@@ -2679,9 +2679,9 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
@@ -2694,7 +2694,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Equal1~2	LIT INDEX 0 FANOUTS 23
+		0: [COMBOUT]	traffic:inst|Equal1~2	LIT INDEX 0 FANOUTS 20
 		1: NONE
 		2: NONE
 		3: NONE
@@ -2722,7 +2722,7 @@ Chip Device Options:
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  traffic:inst|Add0~21	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count[4]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count[4]~40	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|Selector8~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
@@ -2761,9 +2761,9 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Selector9~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Selector17~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|Add0~23	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Selector9~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Selector9~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
@@ -2802,10 +2802,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Selector18~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector18~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Add0~25	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Selector18~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector18~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Selector18~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Add0~25	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -2886,8 +2886,8 @@ Chip Device Options:
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  traffic:inst|Add0~27	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
-		3: [DATAC]	  traffic:inst|cy~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count[1]~37	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count[1]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -2927,8 +2927,8 @@ Chip Device Options:
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  traffic:inst|Add0~29	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
-		3: [DATAC]	  traffic:inst|cy~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count[1]~37	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count[1]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -2968,8 +2968,8 @@ Chip Device Options:
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  traffic:inst|Add0~31	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
-		3: [DATAC]	  traffic:inst|cy~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count[1]~37	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count[1]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -3050,8 +3050,8 @@ Chip Device Options:
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  traffic:inst|Add0~33	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
-		3: [DATAC]	  traffic:inst|cy~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count[1]~37	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count[1]~42	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -3089,10 +3089,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Selector20~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector20~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: [DATAD]	  traffic:inst|Selector10~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Selector10~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector20~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -3115,7 +3115,7 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 1100
+		lut_mask                       = 0111
 		output_mode                    = reg_only
 
 
@@ -3145,7 +3145,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Equal0~2	LIT INDEX 0 FANOUTS 15
+		0: [COMBOUT]	traffic:inst|Equal0~2	LIT INDEX 0 FANOUTS 17
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3161,7 +3161,7 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|mr~7 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~9 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 113
 	Atom Type: stratix_lcell
@@ -3171,7 +3171,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|mr~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|mr~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -3186,7 +3186,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|mr~7	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|mr~9	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3212,9 +3212,9 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|count[1]~36	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Selector1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
 		4: [DATAD]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
@@ -3228,7 +3228,7 @@ Chip Device Options:
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
 		0: NONE
-		1: [REGOUT]	traffic:inst|state.mycr	LIT INDEX 0 FANOUTS 14 REGED POS
+		1: [REGOUT]	traffic:inst|state.mycr	LIT INDEX 0 FANOUTS 16 REGED POS
 		2: NONE
 		3: NONE
 		4: NONE
@@ -3238,7 +3238,7 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 88f8
+		lut_mask                       = aaee
 		output_mode                    = reg_only
 
 
@@ -3284,7 +3284,7 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|mr~8 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~10 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 116
 	Atom Type: stratix_lcell
@@ -3309,7 +3309,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|mr~8	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|mr~10	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3336,9 +3336,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.mrcg~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|mr~14	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|mr~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -3351,7 +3351,7 @@ Chip Device Options:
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
 		0: NONE
-		1: [REGOUT]	traffic:inst|state.mrcg	LIT INDEX 0 FANOUTS 12 REGED POS
+		1: [REGOUT]	traffic:inst|state.mrcg	LIT INDEX 0 FANOUTS 14 REGED POS
 		2: NONE
 		3: NONE
 		4: NONE
@@ -3361,12 +3361,12 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = eac0
+		lut_mask                       = 88f0
 		output_mode                    = reg_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|mr~9 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~11 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 118
 	Atom Type: stratix_lcell
@@ -3391,7 +3391,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|mr~9	LIT INDEX 0 FANOUTS 3
+		0: [COMBOUT]	traffic:inst|mr~11	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3417,10 +3417,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: [CLK]	  divide:inst1|clk_divide	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		1: [DATAA]	  traffic:inst|Selector10~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Selector10~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|Selector0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count_c~37	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: [ACLR]	~ !(rst_n)	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		6: NO ITERM
 		7: NO ITERM
@@ -3448,7 +3448,7 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|mr~10 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~12 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 120
 	Atom Type: stratix_lcell
@@ -3473,7 +3473,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|mr~10	LIT INDEX 0 FANOUTS 4
+		0: [COMBOUT]	traffic:inst|mr~12	LIT INDEX 0 FANOUTS 4
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3489,7 +3489,7 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|mr~11 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~13 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 121
 	Atom Type: stratix_lcell
@@ -3500,9 +3500,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  traffic:inst|mr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|mr~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|mr~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|mr~10	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|mr~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|mr~11	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|mr~12	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -3514,7 +3514,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|mr~11	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|mr~13	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3530,7 +3530,7 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|mr~12 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~14 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 122
 	Atom Type: stratix_lcell
@@ -3555,7 +3555,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|mr~12	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|mr~14	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3623,9 +3623,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: NO ITERM
-		3: [DATAC]	  Em	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  Ec	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|my	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  7402:inst10|4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -3648,12 +3648,12 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 000a
+		lut_mask                       = 8a00
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|my~6 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~16 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 126
 	Atom Type: stratix_lcell
@@ -3663,10 +3663,51 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|my	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|my~5	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|mr~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: [DATAC]	  Em	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  Ec	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|mr~16	LIT INDEX 0 FANOUTS 3
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 000a
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|my~6 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 127
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|my~5	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|my	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|mr~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -3689,14 +3730,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = a8cc
+		lut_mask                       = eaaa
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|my~7 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 127
+	Atom Id: 128
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -3704,7 +3745,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|mr~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|mr~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -3735,9 +3776,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector20~0 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector18~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 128
+	Atom Id: 129
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -3760,7 +3801,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector20~0	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|Selector18~0	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3778,7 +3819,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|count[1]~36 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 129
+	Atom Id: 130
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -3801,7 +3842,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count[1]~36	LIT INDEX 0 FANOUTS 5
+		0: [COMBOUT]	traffic:inst|count[1]~36	LIT INDEX 0 FANOUTS 4
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3819,7 +3860,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|mg~5 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 130
+	Atom Id: 131
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -3828,7 +3869,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  Em	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector20~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector18~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  Ec	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|count[1]~36	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -3858,9 +3899,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|cy~6 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector11~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 131
+	Atom Id: 132
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -3883,7 +3924,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|cy~6	LIT INDEX 0 FANOUTS 3
+		0: [COMBOUT]	traffic:inst|Selector11~0	LIT INDEX 0 FANOUTS 4
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3901,7 +3942,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|mg~6 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 132
+	Atom Id: 133
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -3911,7 +3952,7 @@ Chip Device Options:
 		0: NO ITERM
 		1: [DATAA]	  traffic:inst|mg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|cy~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Selector11~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  Ec	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
@@ -3942,7 +3983,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|state~38 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 133
+	Atom Id: 134
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -3965,7 +4006,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|state~38	LIT INDEX 0 FANOUTS 5
+		0: [COMBOUT]	traffic:inst|state~38	LIT INDEX 0 FANOUTS 4
 		1: NONE
 		2: NONE
 		3: NONE
@@ -3983,7 +4024,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|cr~6 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 134
+	Atom Id: 135
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4024,7 +4065,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|cr~7 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 135
+	Atom Id: 136
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4063,48 +4104,7 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|cy~7 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 136
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: NO ITERM
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|cy~7	LIT INDEX 0 FANOUTS 7
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = a8a8
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|cy~8 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|cy~6 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 137
 	Atom Type: stratix_lcell
@@ -4114,10 +4114,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|mr~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|mr~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|cy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|cy~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  7402:inst10|4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|mr~16	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector11~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -4129,7 +4129,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|cy~8	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|cy~6	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -4140,12 +4140,12 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = eaaa
+		lut_mask                       = aaea
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|mr~14 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|cg~5 -- NON-UNIQUE
 	Atom Hier Name: 
 	Atom Id: 138
 	Atom Type: stratix_lcell
@@ -4155,51 +4155,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  Em	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  Ec	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|mr~14	LIT INDEX 0 FANOUTS 2
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 0008
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|cg~5 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 139
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
 		1: [DATAA]	  traffic:inst|cg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|mr~14	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|mr~10	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|mr~12	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|mr~17	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|mr~12	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|mr~14	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -4229,7 +4188,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr32~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 140
+	Atom Id: 139
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4270,7 +4229,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg[6]~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 141
+	Atom Id: 140
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4311,7 +4270,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr33~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 142
+	Atom Id: 141
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4352,7 +4311,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr34~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 143
+	Atom Id: 142
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4393,7 +4352,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr35~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 144
+	Atom Id: 143
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4434,7 +4393,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr36~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 145
+	Atom Id: 144
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4475,7 +4434,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr37~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 146
+	Atom Id: 145
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4516,7 +4475,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr38~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 147
+	Atom Id: 146
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4557,7 +4516,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr43~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 148
+	Atom Id: 147
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4598,7 +4557,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr44~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 149
+	Atom Id: 148
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4639,7 +4598,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr45~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 150
+	Atom Id: 149
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4680,7 +4639,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr46~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 151
+	Atom Id: 150
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4721,7 +4680,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr47~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 152
+	Atom Id: 151
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4762,7 +4721,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr48~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 153
+	Atom Id: 152
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4803,7 +4762,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr49~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 154
+	Atom Id: 153
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4844,7 +4803,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|Selector3~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 155
+	Atom Id: 154
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -4854,7 +4813,7 @@ Chip Device Options:
 		0: NO ITERM
 		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
+		3: [DATAC]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 		5: NO ITERM
 		6: NO ITERM
@@ -4878,7 +4837,48 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 8888
+		lut_mask                       = 8080
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|Selector11~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 155
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: [DATAC]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|Selector11~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 000a
 		output_mode                    = comb_only
 
 
@@ -4895,7 +4895,7 @@ Chip Device Options:
 		0: NO ITERM
 		1: [DATAA]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: NO ITERM
-		3: NO ITERM
+		3: [DATAC]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
@@ -4908,7 +4908,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector12~0	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|Selector12~0	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -4919,178 +4919,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 00aa
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector12~1 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 157
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add1~21	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector12~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector12~1	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = eee0
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector12~2 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 158
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add1~21	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector12~2	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 00ee
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector12~3 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 159
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add1~21	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector12~3	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 08a8
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector12~4 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 160
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add1~21	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: NO ITERM
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector12~4	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 8888
+		lut_mask                       = 0aaa
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|state.NOC -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 161
+	Atom Id: 157
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5114,7 +4950,7 @@ Chip Device Options:
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
 		0: NONE
-		1: [REGOUT]	traffic:inst|state.NOC	LIT INDEX 0 FANOUTS 13 REGED POS
+		1: [REGOUT]	traffic:inst|state.NOC	LIT INDEX 0 FANOUTS 15 REGED POS
 		2: NONE
 		3: NONE
 		4: NONE
@@ -5129,378 +4965,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector12~5 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|count[4]~37 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 162
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Selector12~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector12~5	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 0ace
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count[1]~37 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 163
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count[1]~36	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|state~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count[1]~37	LIT INDEX 0 FANOUTS 5
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = feee
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count_c[5]~47 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 164
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count_c[5]~47	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 88aa
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count_c[5]~48 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 165
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|cy~7	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count_c[5]~47	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count_c[5]~48	LIT INDEX 0 FANOUTS 2
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 00a8
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count[4]~38 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 166
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count[4]~38	LIT INDEX 0 FANOUTS 3
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = aacc
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count_c[5]~49 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 167
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count[4]~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count_c[5]~49	LIT INDEX 0 FANOUTS 2
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 002a
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector11~0 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 168
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add1~29	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector11~0	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = aefe
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector11~1 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 169
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: [DATAD]	  traffic:inst|Add1~29	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector11~1	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 88bb
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector11~2 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 170
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Selector11~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector11~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector11~2	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 02aa
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count[4]~39 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 171
+	Atom Id: 158
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5523,7 +4990,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count[4]~39	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|count[4]~37	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -5539,9 +5006,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|count[4]~40 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|count[3]~38 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 172
+	Atom Id: 159
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5549,10 +5016,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: NO ITERM
+		1: [DATAA]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -5564,7 +5031,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count[4]~40	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|count[3]~38	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -5575,55 +5042,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = eeee
+		lut_mask                       = 00ac
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|count[4]~41 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|count[4]~39 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 173
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count[4]~40	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count[4]~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count[4]~41	LIT INDEX 0 FANOUTS 2
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = eaff
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: traffic:inst|count[4]~42 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 174
+	Atom Id: 160
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5632,9 +5058,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|count[4]~39	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: [DATAD]	  traffic:inst|count[4]~41	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count[3]~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -5646,7 +5072,48 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|count[4]~42	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|count[4]~39	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = a8ff
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|count[4]~40 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 161
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count[4]~37	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [DATAD]	  traffic:inst|count[4]~39	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|count[4]~40	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -5664,7 +5131,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|Selector8~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 175
+	Atom Id: 162
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5672,8 +5139,8 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count[4]~41	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|count[4]~39	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|count[4]~39	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count[4]~37	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -5703,9 +5170,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector9~2 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector17~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 176
+	Atom Id: 163
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5728,7 +5195,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector9~2	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|Selector17~0	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -5744,9 +5211,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector20~1 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector18~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 177
+	Atom Id: 164
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5769,7 +5236,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector20~1	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|Selector18~1	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -5785,50 +5252,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector0~0 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 178
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: NO ITERM
-		2: NO ITERM
-		3: [DATAC]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector0~0	LIT INDEX 0 FANOUTS 4
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 000f
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
 	ATOM_NAME: traffic:inst|Selector10~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 179
+	Atom Id: 165
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5836,10 +5262,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Add1~35	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Add1~27	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -5862,14 +5288,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = aaa8
+		lut_mask                       = 88a0
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|Selector10~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 180
+	Atom Id: 166
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5877,10 +5303,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add1~35	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: [DATAD]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Add1~27	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: NO ITERM
+		3: [DATAC]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -5903,14 +5329,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = aacc
+		lut_mask                       = 000a
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector0~1 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector10~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 181
+	Atom Id: 167
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5920,8 +5346,8 @@ Chip Device Options:
 		0: NO ITERM
 		1: [DATAA]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: NO ITERM
+		3: [DATAC]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -5933,7 +5359,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector0~1	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|Selector10~2	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -5944,14 +5370,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 8888
+		lut_mask                       = 8088
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector10~2 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector10~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 182
+	Atom Id: 168
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -5974,7 +5400,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector10~2	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|Selector10~3	LIT INDEX 0 FANOUTS 3
 		1: NONE
 		2: NONE
 		3: NONE
@@ -5990,9 +5416,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector10~3 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector10~4 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 183
+	Atom Id: 169
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6000,10 +5426,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Selector0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector10~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Selector10~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Add1~27	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -6015,7 +5441,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector10~3	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|Selector10~4	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -6026,14 +5452,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 002f
+		lut_mask                       = eeea
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector18~0 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector0~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 184
+	Atom Id: 170
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6041,10 +5467,51 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add0~25	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: NO ITERM
+		2: NO ITERM
+		3: [DATAC]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|Selector0~0	LIT INDEX 0 FANOUTS 3
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 000f
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|Selector12~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 171
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|Selector12~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|cy~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -6056,7 +5523,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector18~0	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|Selector12~1	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -6067,14 +5534,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 00ac
+		lut_mask                       = ffae
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector18~1 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector1~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 185
+	Atom Id: 172
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6082,9 +5549,91 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Add0~25	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: NO ITERM
+		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|Selector1~0	LIT INDEX 0 FANOUTS 3
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0088
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|Selector12~2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 173
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|Selector3~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|Selector12~2	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = eefe
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|count[1]~41 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 174
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: NO ITERM
 		5: NO ITERM
 		6: NO ITERM
@@ -6097,7 +5646,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector18~1	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|count[1]~41	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -6108,14 +5657,55 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 8888
+		lut_mask                       = a8a8
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|count[1]~42 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 175
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|count[1]~36	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count[1]~41	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|count[1]~42	LIT INDEX 0 FANOUTS 7
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = feee
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|Selector18~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 186
+	Atom Id: 176
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6124,9 +5714,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector18~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count[1]~36	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Add0~25	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state.mgcr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -6149,14 +5739,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = a8ec
+		lut_mask                       = 00ac
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector20~2 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector18~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 187
+	Atom Id: 177
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6164,10 +5754,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Selector3~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|cy~6	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|state.mrcg	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -6179,7 +5769,89 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector20~2	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|Selector18~3	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 00fe
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|Selector3~2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 178
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|Selector3~2	LIT INDEX 0 FANOUTS 2
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 8888
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|Selector18~4 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 179
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|Add0~25	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector18~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Selector3~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector11~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|Selector18~4	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -6195,9 +5867,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector20~3 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|Selector20~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 188
+	Atom Id: 180
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6206,9 +5878,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  traffic:inst|count[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Selector20~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Selector20~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector18~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector18~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -6220,7 +5892,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector20~3	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	traffic:inst|Selector20~0	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -6231,14 +5903,96 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 888a
+		lut_mask                       = eac8
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|Selector20~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 181
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|Selector1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Selector20~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Selector3~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Selector11~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|Selector20~1	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = eefe
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|count_c~37 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 182
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|Equal0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|count_c~37	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 8888
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|LessThan1~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 190
+	Atom Id: 184
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6279,7 +6033,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr22~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 191
+	Atom Id: 185
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6320,7 +6074,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[0]~16 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 192
+	Atom Id: 186
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6361,7 +6115,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr22~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 193
+	Atom Id: 187
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6402,7 +6156,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|Decoder1~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 194
+	Atom Id: 188
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6443,7 +6197,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr22~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 195
+	Atom Id: 189
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6484,7 +6238,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr22~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 196
+	Atom Id: 190
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6525,7 +6279,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[0]~17 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 197
+	Atom Id: 191
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6566,7 +6320,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr21~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 198
+	Atom Id: 192
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6607,7 +6361,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[1]~18 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 199
+	Atom Id: 193
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6648,7 +6402,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr19~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 200
+	Atom Id: 194
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6689,7 +6443,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[2]~19 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 201
+	Atom Id: 195
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6730,7 +6484,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr17~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 202
+	Atom Id: 196
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6771,7 +6525,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[3]~20 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 203
+	Atom Id: 197
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6812,7 +6566,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[3]~21 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 204
+	Atom Id: 198
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6853,7 +6607,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr27~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 205
+	Atom Id: 199
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6894,7 +6648,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr22~4 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 206
+	Atom Id: 200
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6935,7 +6689,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr29~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 207
+	Atom Id: 201
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -6976,7 +6730,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|comb~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 208
+	Atom Id: 202
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7017,7 +6771,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|Decoder1~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 209
+	Atom Id: 203
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7056,9 +6810,50 @@ Chip Device Options:
 
 
 - ATOM ------------------------
+	ATOM_NAME: seg:inst9|LessThan0~2 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 204
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|count_c[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count_c[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count_c[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	seg:inst9|LessThan0~2	LIT INDEX 0 FANOUTS 7
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = a888
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr8~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 210
+	Atom Id: 205
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7092,55 +6887,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 557e
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
-	ATOM_NAME: seg:inst9|LessThan0~2 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 211
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[4]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|count_c[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count_c[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|LessThan0~2	LIT INDEX 0 FANOUTS 8
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = a888
+		lut_mask                       = 557f
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg3[0]~8 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 212
+	Atom Id: 206
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7148,10 +6902,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|LessThan0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|WideOr8~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -7174,14 +6928,137 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 8880
+		lut_mask                       = 008a
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: seg:inst9|seg_reg3[0]~9 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 207
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: NO ITERM
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	seg:inst9|seg_reg3[0]~9	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = eeee
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr6~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 213
+	Atom Id: 208
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: NO ITERM
+		4: [DATAD]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	seg:inst9|WideOr6~0	LIT INDEX 0 FANOUTS 3
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 0088
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: seg:inst9|seg_reg3[0]~10 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 209
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  seg:inst9|seg_reg3[0]~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg3[0]~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  seg:inst9|WideOr6~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	seg:inst9|seg_reg3[0]~10	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = eefe
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: seg:inst9|WideOr6~1 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 210
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7204,7 +7081,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|WideOr6~0	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	seg:inst9|WideOr6~1	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -7222,7 +7099,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|Decoder0~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 214
+	Atom Id: 211
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7261,9 +7138,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|WideOr6~1 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|WideOr6~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 215
+	Atom Id: 212
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7271,7 +7148,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  seg:inst9|WideOr6~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|WideOr6~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|Decoder0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -7286,7 +7163,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|WideOr6~1	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	seg:inst9|WideOr6~2	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -7302,50 +7179,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|WideOr6~2 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 216
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: NO ITERM
-		4: [DATAD]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|WideOr6~2	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = 0088
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr6~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 217
+	Atom Id: 213
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7353,10 +7189,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  seg:inst9|WideOr6~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  seg:inst9|WideOr6~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|WideOr6~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  seg:inst9|WideOr6~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: NO ITERM
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -7368,7 +7204,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|WideOr6~3	LIT INDEX 0 FANOUTS 3
+		0: [COMBOUT]	seg:inst9|WideOr6~3	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -7379,14 +7215,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = aaea
+		lut_mask                       = eaea
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg3[0]~9 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg3[0]~11 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 218
+	Atom Id: 214
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7395,7 +7231,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  seg:inst9|WideOr6~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|WideOr6~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|WideOr6~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -7409,7 +7245,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg3[0]~9	LIT INDEX 0 FANOUTS 4
+		0: [COMBOUT]	seg:inst9|seg_reg3[0]~11	LIT INDEX 0 FANOUTS 4
 		1: NONE
 		2: NONE
 		3: NONE
@@ -7427,7 +7263,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr5~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 219
+	Atom Id: 215
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7466,9 +7302,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg3[1]~10 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg3[1]~12 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 220
+	Atom Id: 216
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7476,7 +7312,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  seg:inst9|WideOr5~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|count_c[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -7491,7 +7327,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg3[1]~10	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	seg:inst9|seg_reg3[1]~12	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -7509,7 +7345,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr3~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 221
+	Atom Id: 217
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7548,9 +7384,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg3[2]~11 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg3[2]~13 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 222
+	Atom Id: 218
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7558,7 +7394,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  seg:inst9|WideOr3~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|count_c[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -7573,7 +7409,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg3[2]~11	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	seg:inst9|seg_reg3[2]~13	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -7591,7 +7427,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr1~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 223
+	Atom Id: 219
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7630,9 +7466,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg3[3]~12 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg3[3]~14 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 224
+	Atom Id: 220
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7655,7 +7491,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg3[3]~12	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	seg:inst9|seg_reg3[3]~14	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -7671,9 +7507,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg3[3]~13 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg3[3]~15 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 225
+	Atom Id: 221
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7681,10 +7517,10 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  seg:inst9|seg_reg3[3]~12	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  seg:inst9|seg_reg3[3]~14	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  traffic:inst|count_c[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  traffic:inst|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -7696,7 +7532,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg3[3]~13	LIT INDEX 0 FANOUTS 1
+		0: [COMBOUT]	seg:inst9|seg_reg3[3]~15	LIT INDEX 0 FANOUTS 1
 		1: NONE
 		2: NONE
 		3: NONE
@@ -7714,7 +7550,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr11~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 226
+	Atom Id: 222
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7755,7 +7591,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr6~4 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 227
+	Atom Id: 223
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7763,9 +7599,9 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  seg:inst9|WideOr6~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: NO ITERM
-		3: NO ITERM
+		1: [DATAA]	  seg:inst9|WideOr6~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  seg:inst9|WideOr6~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
@@ -7789,14 +7625,14 @@ Chip Device Options:
 		synch_mode                     = off
 		register_cascade_mode          = off
 		sum_lutc_input                 = datac
-		lut_mask                       = 00aa
+		lut_mask                       = 00ea
 		output_mode                    = comb_only
 
 
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr13~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 228
+	Atom Id: 224
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7837,7 +7673,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|comb~0 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 229
+	Atom Id: 225
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7846,7 +7682,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|WideOr6~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -7878,7 +7714,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|Decoder0~1 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 230
+	Atom Id: 226
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7886,7 +7722,7 @@ Chip Device Options:
 
 	INPUTS (Driven By):
 		0: NO ITERM
-		1: [DATAA]	  traffic:inst|Equal1~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		1: [DATAA]	  traffic:inst|Equal1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  seg:inst9|Decoder0~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: NO ITERM
 		4: [DATAD]	  traffic:inst|count_c[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
@@ -7919,7 +7755,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: traffic:inst|Selector4~2 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 231
+	Atom Id: 227
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7960,7 +7796,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: divide:inst1|cnt[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 232
+	Atom Id: 228
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -7999,9 +7835,50 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|Selector9~4 -- NON-UNIQUE
+	ATOM_NAME: traffic:inst|mr~17 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 233
+	Atom Id: 229
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  Em	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  Ec	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  traffic:inst|state.mycr	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	traffic:inst|mr~17	LIT INDEX 0 FANOUTS 1
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = 1000
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
+	ATOM_NAME: traffic:inst|Selector9~3 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 230
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8011,7 +7888,7 @@ Chip Device Options:
 		0: NO ITERM
 		1: [DATAA]	  traffic:inst|state.mrcy	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		2: [DATAB]	  cs	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count[4]~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count[3]~38	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  traffic:inst|state.NOC	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
@@ -8024,7 +7901,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|Selector9~4	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	traffic:inst|Selector9~3	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -8040,50 +7917,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: traffic:inst|state.mrcg~4 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 234
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  Em	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  Ec	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|Equal1~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: NO ITERM
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	traffic:inst|state.mrcg~4	LIT INDEX 0 FANOUTS 1
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = efef
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
 	ATOM_NAME: seg:inst9|LessThan1~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 235
+	Atom Id: 231
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8124,7 +7960,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr27~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 236
+	Atom Id: 232
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8165,7 +8001,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr29~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 237
+	Atom Id: 233
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8204,9 +8040,50 @@ Chip Device Options:
 
 
 - ATOM ------------------------
+	ATOM_NAME: seg:inst9|LessThan0~3 -- NON-UNIQUE
+	Atom Hier Name: 
+	Atom Id: 234
+	Atom Type: stratix_lcell
+
+	Assembler Lutmask : I very much like HEX numbers. 
+	power up = low
+
+	INPUTS (Driven By):
+		0: NO ITERM
+		1: [DATAA]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		3: [DATAC]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		5: NO ITERM
+		6: NO ITERM
+		7: NO ITERM
+		8: NO ITERM
+		9: NO ITERM
+		10: NO ITERM
+		11: NO ITERM
+		12: NO ITERM
+		13: NO ITERM
+		14: NO ITERM
+	OUTPUTS (Int. Connections):
+		0: [COMBOUT]	seg:inst9|LessThan0~3	LIT INDEX 0 FANOUTS 5
+		1: NONE
+		2: NONE
+		3: NONE
+		4: NONE
+
+	PARAMETER LIST:
+		operation_mode                 = normal
+		synch_mode                     = off
+		register_cascade_mode          = off
+		sum_lutc_input                 = datac
+		lut_mask                       = feff
+		output_mode                    = comb_only
+
+
+- ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr11~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 238
+	Atom Id: 235
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8245,50 +8122,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|LessThan0~3 -- NON-UNIQUE
-	Atom Hier Name: 
-	Atom Id: 239
-	Atom Type: stratix_lcell
-
-	Assembler Lutmask : I very much like HEX numbers. 
-	power up = low
-
-	INPUTS (Driven By):
-		0: NO ITERM
-		1: [DATAA]	  traffic:inst|count_c[7]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  traffic:inst|count_c[6]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		3: [DATAC]	  traffic:inst|count_c[5]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  seg:inst9|LessThan0~2	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		5: NO ITERM
-		6: NO ITERM
-		7: NO ITERM
-		8: NO ITERM
-		9: NO ITERM
-		10: NO ITERM
-		11: NO ITERM
-		12: NO ITERM
-		13: NO ITERM
-		14: NO ITERM
-	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|LessThan0~3	LIT INDEX 0 FANOUTS 4
-		1: NONE
-		2: NONE
-		3: NONE
-		4: NONE
-
-	PARAMETER LIST:
-		operation_mode                 = normal
-		synch_mode                     = off
-		register_cascade_mode          = off
-		sum_lutc_input                 = datac
-		lut_mask                       = feff
-		output_mode                    = comb_only
-
-
-- ATOM ------------------------
 	ATOM_NAME: seg:inst9|WideOr13~3 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 240
+	Atom Id: 236
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8329,7 +8165,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[0]~22 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 241
+	Atom Id: 237
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8370,7 +8206,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 242
+	Atom Id: 238
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8411,7 +8247,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 243
+	Atom Id: 239
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8452,7 +8288,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 244
+	Atom Id: 240
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8493,7 +8329,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 245
+	Atom Id: 241
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8532,9 +8368,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg2.0001_624 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg2.0001_625 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 246
+	Atom Id: 242
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8543,7 +8379,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  seg:inst9|WideOr27~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg2.0001_624	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg2.0001_625	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|WideOr22~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|LessThan1~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -8557,7 +8393,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg2.0001_624	LIT INDEX 0 FANOUTS 5
+		0: [COMBOUT]	seg:inst9|seg_reg2.0001_625	LIT INDEX 0 FANOUTS 5
 		1: NONE
 		2: NONE
 		3: NONE
@@ -8573,9 +8409,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg2.0010_617 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg2.0010_618 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 247
+	Atom Id: 243
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8584,7 +8420,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  seg:inst9|WideOr29~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg2.0010_617	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg2.0010_618	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|WideOr22~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|LessThan1~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -8598,7 +8434,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg2.0010_617	LIT INDEX 0 FANOUTS 4
+		0: [COMBOUT]	seg:inst9|seg_reg2.0010_618	LIT INDEX 0 FANOUTS 4
 		1: NONE
 		2: NONE
 		3: NONE
@@ -8614,9 +8450,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg2.0000_630 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg2.0000_631 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 248
+	Atom Id: 244
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8625,7 +8461,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: NO ITERM
-		2: [DATAB]	  seg:inst9|seg_reg2.0000_630	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg2.0000_631	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|LessThan1~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|comb~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -8639,7 +8475,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg2.0000_630	LIT INDEX 0 FANOUTS 3
+		0: [COMBOUT]	seg:inst9|seg_reg2.0000_631	LIT INDEX 0 FANOUTS 3
 		1: NONE
 		2: NONE
 		3: NONE
@@ -8655,9 +8491,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg2.0011_610 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg2.0011_611 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 249
+	Atom Id: 245
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8666,7 +8502,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  seg:inst9|Decoder1~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg2.0011_610	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg2.0011_611	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|WideOr22~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|LessThan1~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -8680,7 +8516,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg2.0011_610	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	seg:inst9|seg_reg2.0011_611	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -8698,7 +8534,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg3[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 250
+	Atom Id: 246
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8707,9 +8543,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: NO ITERM
-		2: [DATAB]	  seg:inst9|seg_reg3[0]~8	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg3[0]~10	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|seg_reg3[0]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  seg:inst9|seg_reg3[0]~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  seg:inst9|seg_reg3[0]~11	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -8739,7 +8575,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg3[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 251
+	Atom Id: 247
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8748,9 +8584,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: NO ITERM
-		2: [DATAB]	  seg:inst9|seg_reg3[1]~10	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg3[1]~12	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|seg_reg3[1]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  seg:inst9|seg_reg3[0]~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  seg:inst9|seg_reg3[0]~11	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -8780,7 +8616,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg3[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 252
+	Atom Id: 248
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8789,9 +8625,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: NO ITERM
-		2: [DATAB]	  seg:inst9|seg_reg3[2]~11	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg3[2]~13	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|seg_reg3[2]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  seg:inst9|seg_reg3[0]~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  seg:inst9|seg_reg3[0]~11	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -8821,7 +8657,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg:inst9|seg_reg3[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 253
+	Atom Id: 249
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8830,9 +8666,9 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: NO ITERM
-		2: [DATAB]	  seg:inst9|seg_reg3[3]~13	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg3[3]~15	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|seg_reg3[3]	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		4: [DATAD]	  seg:inst9|seg_reg3[0]~9	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		4: [DATAD]	  seg:inst9|seg_reg3[0]~11	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
 		6: NO ITERM
 		7: NO ITERM
@@ -8860,9 +8696,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg4.0001_728 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg4.0001_729 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 254
+	Atom Id: 250
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8871,7 +8707,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  seg:inst9|WideOr11~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg4.0001_728	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg4.0001_729	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|WideOr6~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|LessThan0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -8885,7 +8721,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg4.0001_728	LIT INDEX 0 FANOUTS 5
+		0: [COMBOUT]	seg:inst9|seg_reg4.0001_729	LIT INDEX 0 FANOUTS 5
 		1: NONE
 		2: NONE
 		3: NONE
@@ -8901,9 +8737,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg4.0010_721 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg4.0010_722 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 255
+	Atom Id: 251
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8912,7 +8748,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  seg:inst9|WideOr13~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg4.0010_721	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg4.0010_722	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|WideOr6~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|LessThan0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -8926,7 +8762,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg4.0010_721	LIT INDEX 0 FANOUTS 4
+		0: [COMBOUT]	seg:inst9|seg_reg4.0010_722	LIT INDEX 0 FANOUTS 4
 		1: NONE
 		2: NONE
 		3: NONE
@@ -8942,9 +8778,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg4.0000_734 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg4.0000_735 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 256
+	Atom Id: 252
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8953,7 +8789,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: NO ITERM
-		2: [DATAB]	  seg:inst9|seg_reg4.0000_734	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg4.0000_735	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|LessThan0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|comb~0	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -8967,7 +8803,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg4.0000_734	LIT INDEX 0 FANOUTS 3
+		0: [COMBOUT]	seg:inst9|seg_reg4.0000_735	LIT INDEX 0 FANOUTS 3
 		1: NONE
 		2: NONE
 		3: NONE
@@ -8983,9 +8819,9 @@ Chip Device Options:
 
 
 - ATOM ------------------------
-	ATOM_NAME: seg:inst9|seg_reg4.0011_714 -- NON-UNIQUE
+	ATOM_NAME: seg:inst9|seg_reg4.0011_715 -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 257
+	Atom Id: 253
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -8994,7 +8830,7 @@ Chip Device Options:
 	INPUTS (Driven By):
 		0: NO ITERM
 		1: [DATAA]	  seg:inst9|Decoder0~1	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
-		2: [DATAB]	  seg:inst9|seg_reg4.0011_714	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
+		2: [DATAB]	  seg:inst9|seg_reg4.0011_715	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		3: [DATAC]	  seg:inst9|WideOr6~4	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		4: [DATAD]	  seg:inst9|LessThan0~3	LIT INDEX 0	GLOBAL:DONT_CARE	DELAY_CHAIN:UNCONNECTED
 		5: NO ITERM
@@ -9008,7 +8844,7 @@ Chip Device Options:
 		13: NO ITERM
 		14: NO ITERM
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	seg:inst9|seg_reg4.0011_714	LIT INDEX 0 FANOUTS 2
+		0: [COMBOUT]	seg:inst9|seg_reg4.0011_715	LIT INDEX 0 FANOUTS 2
 		1: NONE
 		2: NONE
 		3: NONE
@@ -9026,7 +8862,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: cs~_wirecell -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 258
+	Atom Id: 254
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -9067,7 +8903,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: mr -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 261
+	Atom Id: 257
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9116,7 +8952,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: my -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 262
+	Atom Id: 258
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9165,7 +9001,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: mg -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 263
+	Atom Id: 259
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9214,7 +9050,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: cr -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 264
+	Atom Id: 260
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9263,7 +9099,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: cy -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 265
+	Atom Id: 261
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9312,7 +9148,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: cg -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 266
+	Atom Id: 262
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9361,7 +9197,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg[6] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 267
+	Atom Id: 263
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9410,7 +9246,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg[5] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 268
+	Atom Id: 264
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9459,7 +9295,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 269
+	Atom Id: 265
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9508,7 +9344,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 270
+	Atom Id: 266
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9557,7 +9393,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 271
+	Atom Id: 267
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9606,7 +9442,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 272
+	Atom Id: 268
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9655,7 +9491,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 273
+	Atom Id: 269
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9704,7 +9540,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[6] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 274
+	Atom Id: 270
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9753,7 +9589,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[5] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 275
+	Atom Id: 271
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9802,7 +9638,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 276
+	Atom Id: 272
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9851,7 +9687,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 277
+	Atom Id: 273
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9900,7 +9736,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 278
+	Atom Id: 274
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9949,7 +9785,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 279
+	Atom Id: 275
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -9998,7 +9834,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg2[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 280
+	Atom Id: 276
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10047,7 +9883,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg3[6] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 281
+	Atom Id: 277
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10096,7 +9932,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg3[5] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 282
+	Atom Id: 278
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10145,7 +9981,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg3[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 283
+	Atom Id: 279
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10194,7 +10030,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg3[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 284
+	Atom Id: 280
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10243,7 +10079,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg3[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 285
+	Atom Id: 281
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10292,7 +10128,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg3[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 286
+	Atom Id: 282
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10341,7 +10177,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg3[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 287
+	Atom Id: 283
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10390,7 +10226,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg4[6] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 288
+	Atom Id: 284
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10439,7 +10275,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg4[5] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 289
+	Atom Id: 285
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10488,7 +10324,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg4[4] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 290
+	Atom Id: 286
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10537,7 +10373,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg4[3] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 291
+	Atom Id: 287
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10586,7 +10422,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg4[2] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 292
+	Atom Id: 288
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10635,7 +10471,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg4[1] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 293
+	Atom Id: 289
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10684,7 +10520,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: seg4[0] -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 294
+	Atom Id: 290
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10733,7 +10569,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: Em -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 295
+	Atom Id: 291
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10747,7 +10583,7 @@ Chip Device Options:
 		7: NO ITERM
 		8: [PADIO]	DISCONNECTED
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	Em	LIT INDEX 0 FANOUTS 11
+		0: [COMBOUT]	Em	LIT INDEX 0 FANOUTS 10
 		1: NONE
 		2: [PADIO]	Em	LIT INDEX 0 FANOUTS 0
 		3: NONE
@@ -10782,7 +10618,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: Ec -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 296
+	Atom Id: 292
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10796,7 +10632,7 @@ Chip Device Options:
 		7: NO ITERM
 		8: [PADIO]	DISCONNECTED
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	Ec	LIT INDEX 0 FANOUTS 12
+		0: [COMBOUT]	Ec	LIT INDEX 0 FANOUTS 11
 		1: NONE
 		2: [PADIO]	Ec	LIT INDEX 0 FANOUTS 0
 		3: NONE
@@ -10831,7 +10667,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: cs -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 297
+	Atom Id: 293
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10845,7 +10681,7 @@ Chip Device Options:
 		7: NO ITERM
 		8: [PADIO]	DISCONNECTED
 	OUTPUTS (Int. Connections):
-		0: [COMBOUT]	cs	LIT INDEX 0 FANOUTS 26
+		0: [COMBOUT]	cs	LIT INDEX 0 FANOUTS 22
 		1: NONE
 		2: [PADIO]	cs	LIT INDEX 0 FANOUTS 0
 		3: NONE
@@ -10880,7 +10716,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: rst_n -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 298
+	Atom Id: 294
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10929,7 +10765,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: clk -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 299
+	Atom Id: 295
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -10978,7 +10814,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: ~STRATIX_FITTER_CREATED_GND~I -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 300
+	Atom Id: 296
 	Atom Type: stratix_lcell
 
 	Assembler Lutmask : I very much like HEX numbers. 
@@ -11014,7 +10850,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: ~nCSO~ -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 301
+	Atom Id: 297
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):
@@ -11063,7 +10899,7 @@ Chip Device Options:
 - ATOM ------------------------
 	ATOM_NAME: ~ASDO~ -- NON-UNIQUE
 	Atom Hier Name: 
-	Atom Id: 302
+	Atom Id: 298
 	Atom Type: tornado_io
 
 	INPUTS (Driven By):

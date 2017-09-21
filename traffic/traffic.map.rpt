@@ -1,5 +1,5 @@
 Analysis & Synthesis report for traffic
-Sun Sep 17 23:21:29 2017
+Thu Sep 21 16:15:29 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -46,12 +46,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Sep 17 23:21:29 2017    ;
+; Analysis & Synthesis Status ; Successful - Thu Sep 21 16:15:29 2017    ;
 ; Quartus II Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name               ; traffic                                  ;
 ; Top-level Entity Name       ; Block1                                   ;
 ; Family                      ; Cyclone                                  ;
-; Total logic elements        ; 220                                      ;
+; Total logic elements        ; 216                                      ;
 ; Total pins                  ; 39                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; Total memory bits           ; 0                                        ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                         ; Setting            ; Default Value      ;
 +----------------------------------------------------------------+--------------------+--------------------+
-; Device                                                         ; EP1C3T144C8        ;                    ;
+; Device                                                         ; EP1C6Q240C8        ;                    ;
 ; Top-level entity name                                          ; Block1             ; traffic            ;
 ; Family name                                                    ; Cyclone            ; Stratix II         ;
 ; Use Generated Physical Constraints File                        ; Off                ;                    ;
@@ -149,20 +149,20 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 220   ;
-;     -- Combinational with no register       ; 161   ;
+; Total logic elements                        ; 216   ;
+;     -- Combinational with no register       ; 157   ;
 ;     -- Register only                        ; 19    ;
 ;     -- Combinational with a register        ; 40    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 112   ;
-;     -- 3 input functions                    ; 43    ;
-;     -- 2 input functions                    ; 38    ;
+;     -- 4 input functions                    ; 111   ;
+;     -- 3 input functions                    ; 42    ;
+;     -- 2 input functions                    ; 36    ;
 ;     -- 1 input functions                    ; 6     ;
 ;     -- 0 input functions                    ; 2     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 205   ;
+;     -- normal mode                          ; 201   ;
 ;     -- arithmetic mode                      ; 15    ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
@@ -174,8 +174,8 @@ applicable agreement for further details.
 ; I/O pins                                    ; 39    ;
 ; Maximum fan-out node                        ; rst_n ;
 ; Maximum fan-out                             ; 60    ;
-; Total fan-out                               ; 882   ;
-; Average fan-out                             ; 3.41  ;
+; Total fan-out                               ; 871   ;
+; Average fan-out                             ; 3.42  ;
 +---------------------------------------------+-------+
 
 
@@ -184,11 +184,11 @@ applicable agreement for further details.
 +----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name  ; Library Name ;
 +----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------+--------------+
-; |Block1                    ; 220 (1)     ; 59           ; 0           ; 39   ; 0            ; 161 (1)      ; 19 (0)            ; 40 (0)           ; 18 (0)          ; 0 (0)      ; |Block1              ; work         ;
+; |Block1                    ; 216 (1)     ; 59           ; 0           ; 39   ; 0            ; 157 (1)      ; 19 (0)            ; 40 (0)           ; 18 (0)          ; 0 (0)      ; |Block1              ; work         ;
 ;    |7402:inst10|           ; 1 (1)       ; 0            ; 0           ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Block1|7402:inst10  ; work         ;
 ;    |divide:inst1|          ; 4 (4)       ; 4            ; 0           ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 3 (3)            ; 2 (2)           ; 0 (0)      ; |Block1|divide:inst1 ; work         ;
-;    |seg:inst9|             ; 107 (107)   ; 28           ; 0           ; 0    ; 0            ; 79 (79)      ; 18 (18)           ; 10 (10)          ; 0 (0)           ; 0 (0)      ; |Block1|seg:inst9    ; work         ;
-;    |traffic:inst|          ; 107 (107)   ; 27           ; 0           ; 0    ; 0            ; 80 (80)      ; 0 (0)             ; 27 (27)          ; 16 (16)         ; 0 (0)      ; |Block1|traffic:inst ; work         ;
+;    |seg:inst9|             ; 109 (109)   ; 28           ; 0           ; 0    ; 0            ; 81 (81)      ; 18 (18)           ; 10 (10)          ; 0 (0)           ; 0 (0)      ; |Block1|seg:inst9    ; work         ;
+;    |traffic:inst|          ; 101 (101)   ; 27           ; 0           ; 0    ; 0            ; 74 (74)      ; 0 (0)             ; 27 (27)          ; 16 (16)         ; 0 (0)      ; |Block1|traffic:inst ; work         ;
 +----------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -216,18 +216,18 @@ Encoding Type:  One-Hot
 ; seg:inst9|seg_reg[1]                                ; seg:inst9|seg_reg[0]~1  ; yes                    ;
 ; seg:inst9|seg_reg[2]                                ; seg:inst9|seg_reg[0]~1  ; yes                    ;
 ; seg:inst9|seg_reg[3]                                ; seg:inst9|seg_reg[0]~1  ; yes                    ;
-; seg:inst9|seg_reg2.0001_624                         ; seg:inst9|WideOr22      ; yes                    ;
-; seg:inst9|seg_reg2.0010_617                         ; seg:inst9|WideOr22      ; yes                    ;
-; seg:inst9|seg_reg2.0000_630                         ; GND                     ; yes                    ;
-; seg:inst9|seg_reg2.0011_610                         ; seg:inst9|WideOr22      ; yes                    ;
+; seg:inst9|seg_reg2.0001_625                         ; seg:inst9|WideOr22      ; yes                    ;
+; seg:inst9|seg_reg2.0010_618                         ; seg:inst9|WideOr22      ; yes                    ;
+; seg:inst9|seg_reg2.0000_631                         ; GND                     ; yes                    ;
+; seg:inst9|seg_reg2.0011_611                         ; seg:inst9|WideOr22      ; yes                    ;
 ; seg:inst9|seg_reg3[0]                               ; seg:inst9|seg_reg3[0]~1 ; yes                    ;
 ; seg:inst9|seg_reg3[1]                               ; seg:inst9|seg_reg3[0]~1 ; yes                    ;
 ; seg:inst9|seg_reg3[2]                               ; seg:inst9|seg_reg3[0]~1 ; yes                    ;
 ; seg:inst9|seg_reg3[3]                               ; seg:inst9|seg_reg3[0]~1 ; yes                    ;
-; seg:inst9|seg_reg4.0001_728                         ; seg:inst9|WideOr6       ; yes                    ;
-; seg:inst9|seg_reg4.0010_721                         ; seg:inst9|WideOr6       ; yes                    ;
-; seg:inst9|seg_reg4.0000_734                         ; GND                     ; yes                    ;
-; seg:inst9|seg_reg4.0011_714                         ; seg:inst9|WideOr6       ; yes                    ;
+; seg:inst9|seg_reg4.0001_729                         ; seg:inst9|WideOr6       ; yes                    ;
+; seg:inst9|seg_reg4.0010_722                         ; seg:inst9|WideOr6       ; yes                    ;
+; seg:inst9|seg_reg4.0000_735                         ; GND                     ; yes                    ;
+; seg:inst9|seg_reg4.0011_715                         ; seg:inst9|WideOr6       ; yes                    ;
 ; Number of user-specified and inferred latches = 16  ;                         ;                        ;
 +-----------------------------------------------------+-------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -282,7 +282,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 ; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |Block1|traffic:inst|count[1]   ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|traffic:inst|count_c[5] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Block1|traffic:inst|count_c[5] ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Block1|traffic:inst|count[3]   ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Block1|traffic:inst|count[4]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
@@ -308,7 +308,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Sun Sep 17 23:21:28 2017
+    Info: Processing started: Thu Sep 21 16:15:28 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off traffic -c traffic
 Info: Found 1 design units, including 1 entities, in source file traffic.v
     Info: Found entity 1: traffic
@@ -326,7 +326,6 @@ Warning (10036): Verilog HDL or VHDL warning at traffic.v(16): object "m" assign
 Warning (10036): Verilog HDL or VHDL warning at traffic.v(17): object "c" assigned a value but never read
 Info: Elaborating entity "divide" for hierarchy "divide:inst1"
 Info: Elaborating entity "seg" for hierarchy "seg:inst9"
-Warning (10272): Verilog HDL Case Statement warning at seg.v(134): case item expression covers a value already covered by a previous case item
 Warning (10270): Verilog HDL Case Statement warning at seg.v(23): incomplete case statement has no default case item
 Warning (10230): Verilog HDL assignment warning at seg.v(144): truncated value with size 8 to match size of target (4)
 Warning (10240): Verilog HDL Always Construct warning at seg.v(19): inferring latch(es) for variable "seg_reg3", which holds its previous value in one or more paths through the always construct
@@ -373,13 +372,13 @@ Warning: Latch seg:inst9|seg_reg[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[2]
 Warning: Latch seg:inst9|seg_reg[3] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[3]
-Warning: Latch seg:inst9|seg_reg2.0001_624 has unsafe behavior
+Warning: Latch seg:inst9|seg_reg2.0001_625 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[7]
     Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count[7]
-Warning: Latch seg:inst9|seg_reg2.0010_617 has unsafe behavior
+Warning: Latch seg:inst9|seg_reg2.0010_618 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[7]
     Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count[7]
-Warning: Latch seg:inst9|seg_reg2.0011_610 has unsafe behavior
+Warning: Latch seg:inst9|seg_reg2.0011_611 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count[7]
     Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count[7]
 Warning: Latch seg:inst9|seg_reg3[0] has unsafe behavior
@@ -390,13 +389,13 @@ Warning: Latch seg:inst9|seg_reg3[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[2]
 Warning: Latch seg:inst9|seg_reg3[3] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[3]
-Warning: Latch seg:inst9|seg_reg4.0001_728 has unsafe behavior
+Warning: Latch seg:inst9|seg_reg4.0001_729 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[7]
     Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count_c[7]
-Warning: Latch seg:inst9|seg_reg4.0010_721 has unsafe behavior
+Warning: Latch seg:inst9|seg_reg4.0010_722 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[7]
     Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count_c[7]
-Warning: Latch seg:inst9|seg_reg4.0011_714 has unsafe behavior
+Warning: Latch seg:inst9|seg_reg4.0011_715 has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal traffic:inst|count_c[7]
     Warning: Ports ENA and CLR on the latch are fed by the same signal traffic:inst|count_c[7]
 Info: Registers with preset signals will power-up high
@@ -433,14 +432,14 @@ Info: 31 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "divide:inst1|cnt[30]" lost all its fanouts during netlist optimizations.
     Info: Register "divide:inst1|cnt[31]" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file F:/Qutuars9.0/traffic/traffic.map.smsg
-Info: Implemented 259 device resources after synthesis - the final resource count might be different
+Info: Implemented 255 device resources after synthesis - the final resource count might be different
     Info: Implemented 5 input pins
     Info: Implemented 34 output pins
-    Info: Implemented 220 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Implemented 216 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 46 warnings
     Info: Peak virtual memory: 248 megabytes
-    Info: Processing ended: Sun Sep 17 23:21:29 2017
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Sep 21 16:15:30 2017
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

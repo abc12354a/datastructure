@@ -1,5 +1,5 @@
 Flow report for traffic
-Sun Sep 17 23:21:33 2017
+Thu Sep 21 16:15:35 2017
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -38,19 +38,19 @@ applicable agreement for further details.
 +--------------------------------------------------------------------+
 ; Flow Summary                                                       ;
 +-------------------------+------------------------------------------+
-; Flow Status             ; Successful - Sun Sep 17 23:21:33 2017    ;
+; Flow Status             ; Successful - Thu Sep 21 16:15:35 2017    ;
 ; Quartus II Version      ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name           ; traffic                                  ;
 ; Top-level Entity Name   ; Block1                                   ;
 ; Family                  ; Cyclone                                  ;
-; Device                  ; EP1C3T144C8                              ;
+; Device                  ; EP1C6Q240C8                              ;
 ; Timing Models           ; Final                                    ;
 ; Met timing requirements ; No                                       ;
-; Total logic elements    ; 220 / 2,910 ( 8 % )                      ;
-; Total pins              ; 39 / 104 ( 38 % )                        ;
+; Total logic elements    ; 216 / 5,980 ( 4 % )                      ;
+; Total pins              ; 39 / 185 ( 21 % )                        ;
 ; Total virtual pins      ; 0                                        ;
-; Total memory bits       ; 0 / 59,904 ( 0 % )                       ;
-; Total PLLs              ; 0 / 1 ( 0 % )                            ;
+; Total memory bits       ; 0 / 92,160 ( 0 % )                       ;
+; Total PLLs              ; 0 / 2 ( 0 % )                            ;
 +-------------------------+------------------------------------------+
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/17/2017 23:21:28 ;
+; Start date & time ; 09/21/2017 16:15:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; traffic             ;
 +-------------------+---------------------+
@@ -70,9 +70,7 @@ applicable agreement for further details.
 +------------------------------------+-----------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                             ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+-----------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 53164090045821.150566168806016    ; --            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                                ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                                 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 53164090045821.150598172814124    ; --            ; --          ; --             ;
 ; MISC_FILE                          ; F:/Qutuars9.0/traffic/traffic.dpf ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                          ; --            ; Block1      ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                            ; --            ; Block1      ; Top            ;
@@ -87,10 +85,10 @@ applicable agreement for further details.
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 248 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:01     ; 1.0                     ; 282 MB              ; 00:00:01                           ;
+; Fitter                  ; 00:00:03     ; 1.0                     ; 287 MB              ; 00:00:01                           ;
 ; Assembler               ; 00:00:00     ; 1.0                     ; 205 MB              ; 00:00:00                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 193 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
+; Total                   ; 00:00:04     ; --                      ; --                  ; 00:00:02                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
