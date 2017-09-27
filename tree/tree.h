@@ -13,7 +13,6 @@ using std::endl;
 #define OK 1
 #define T_ERROR 0
 typedef char datatype;
-
 typedef struct bitnode
 {
     datatype data;
@@ -24,6 +23,11 @@ struct stack
     bitree* base;
     bitree* top;
     int stacksize;
+};
+struct queue{
+    bitree* front;
+    bitree* rear;
+    int queueszie;
 };
 int print(datatype data);
 bool createtree(bitree& T);
@@ -36,4 +40,10 @@ bool pop(stack& s,bitree& stack_out);
 bool isempty(stack& s);
 void pre_post(bitnode* T,int(*visit)(datatype data));
 bitree gettop(stack s);
+void initqueue(queue &q);
+void in_queue(queue& q,bitree queue_in);
+void out_queue(queue& q,bitree &queue_out);
+bool isqempty(queue q);
+bitree getfront(queue q);
+void BFStravel(bitree* T);
 #endif //TREE_TREE_H

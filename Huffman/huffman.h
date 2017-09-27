@@ -12,6 +12,8 @@ typedef struct Treenode{
 typedef struct dict{
     char value;
     char* code;
+    int length;
+    int w;
 }*Hdict;
 typedef char** HC;
 void Huffcode(HTree &Tree,HC& Code,int n, int* w);

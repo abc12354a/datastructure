@@ -74,6 +74,7 @@ void Huffcode(HTree &Tree, HC &Code, int n, int* w) {
     Code = new char*[n+1];
     auto cd = new char[n];
     cd[n-1] = '\0';
+//    std::cout<<"in code ";
     for(int i = 0;i<n;++i){
         int start = n-1;
         int c = i;
@@ -84,10 +85,12 @@ void Huffcode(HTree &Tree, HC &Code, int n, int* w) {
             else
                 cd[--start] = '1';
         }
+//        std::cout<<"第"<<i<<cd;
         //remember to make block request for elements of array;
         Code[i] = new char[n];
         strcpy(Code[i],&cd[start]);
     }
+//    std::cout<<"\n";
 }
 
 HC TestTree(int &length,char* data,Hdict &dict) {
@@ -104,7 +107,7 @@ HC TestTree(int &length,char* data,Hdict &dict) {
         dict[i].value = ChList[i];
         dict[i].code = Code[i];
     }
-    for(int i = 0;i<strlen(data)-1;i++){
+    for(int i = 0;i<strlen(data);i++){
         for(int j = 0;j<count;j++){
             if(data[i] == ChList[j]){
                 *RCode = Code[j];
@@ -113,6 +116,9 @@ HC TestTree(int &length,char* data,Hdict &dict) {
             }
         }
     }
+    std::cout<<"\n";
+    std::cout<<"list "<<ChList;
+    std::cout<<"\n";
     return  RCode_T;
 }
 /*
@@ -123,7 +129,7 @@ int Count(char *X, int *w,char* ChList) {
     int num[256] = {0};
     auto count = 0;
     char ch;
-    for(int i = 0;X[i]!='@';i++){
+    for(int i = 0;i<strlen(X);i++){
         ch = X[i];
         num[ch]++;
     }

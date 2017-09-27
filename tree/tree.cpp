@@ -3,6 +3,7 @@
 //
 
 #include "tree.h"
+//前序创建
 bool createtree(bitree& T) {
     datatype input;
     cin>>input;
@@ -135,5 +136,34 @@ void pre_post(bitnode *T, int (*visit)(datatype)) {
             pcur=pcur->rchild;
         }
     }
+}
+
+void initqueue(queue &q) {
+    q.front = new bitree[STACK_SIZE_INIT];
+    if(!q.front)
+        std::cout<<"init failed"<<std::endl;
+    q.rear = q.front;
+    q.queueszie = STACK_SIZE_INIT;
+}
+void in_queue(queue &q, bitree queue_in) {
+    *q.rear = queue_in;
+    q.rear++;
+}
+void out_queue(queue &q, bitree &queue_out) {
+    queue_out = *q.front;
+    q.front++;
+}
+bool isqempty(queue q) {
+    if(q.front == q.rear)
+        return true;
+    else
+        return false;
+}
+bitree getfront(queue q) {
+    if(!isqempty(q))
+        return *q.front;
+    return nullptr;
+}
+void BFStravel(bitree *T) {
 }
 
