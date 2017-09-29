@@ -25,8 +25,9 @@ struct stack
     int stacksize;
 };
 struct queue{
-    bitree* front;
-    bitree* rear;
+    int front;
+    int rear;
+    bitree* base;
     int queueszie;
 };
 int print(datatype data);
@@ -45,5 +46,6 @@ void in_queue(queue& q,bitree queue_in);
 void out_queue(queue& q,bitree &queue_out);
 bool isqempty(queue q);
 bitree getfront(queue q);
-void BFStravel(bitree* T);
+void BFStravel(bitnode* T);
+void TestQueue(bitnode* T);
 #endif //TREE_TREE_H

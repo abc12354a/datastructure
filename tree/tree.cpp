@@ -139,18 +139,19 @@ void pre_post(bitnode *T, int (*visit)(datatype)) {
 }
 
 void initqueue(queue &q) {
-    q.front = new bitree[STACK_SIZE_INIT];
-    if(!q.front)
+    q.base = new bitree[STACK_SIZE_INIT];
+    if(!q.base)
         std::cout<<"init failed"<<std::endl;
-    q.rear = q.front;
+    q.rear = 0;
+    q.front = 0;
     q.queueszie = STACK_SIZE_INIT;
 }
 void in_queue(queue &q, bitree queue_in) {
-    *q.rear = queue_in;
+    q.base[q.rear] = queue_in;
     q.rear++;
 }
 void out_queue(queue &q, bitree &queue_out) {
-    queue_out = *q.front;
+    queue_out = q.base[q.front];
     q.front++;
 }
 bool isqempty(queue q) {
@@ -161,9 +162,30 @@ bool isqempty(queue q) {
 }
 bitree getfront(queue q) {
     if(!isqempty(q))
-        return *q.front;
+        return q.base[q.front];
     return nullptr;
 }
-void BFStravel(bitree *T) {
+void TestQueue(bitnode* T){
+    queue q;
+    initqueue(q);
+    in_queue(q,T);
+    auto Tfront = getfront(q);
+    std::cout<<T->data;
+}
+void BFStravel(bitnode *T) {
+    queue q;
+    initqueue(q);
+    in_queue(q,T);
+    while(!isqempty(q)){
+        bitnode* Qout;
+        out_queue(q,Qout);
+        std::cout<<Qout->data<<" ";
+        if(Qout->lchild!= nullptr){
+            in_queue(q,Qout->lchild);
+        }
+        if(Qout->rchild!= nullptr){
+            in_queue(q,Qout->rchild);
+        }
+    }
 }
 
