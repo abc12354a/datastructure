@@ -4,4 +4,6 @@
 List -added via Linux;<br/>
 Martix -added via Linux;<br/>
 Linked List -added via Linux;<br/>
+Stack fundamental function finished<br/>
 Ecode part of Huffman Tree finish;<br/>
+Broad First Search finished;<br/>
