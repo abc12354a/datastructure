@@ -84,7 +84,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/angus/CLionProjects/graph/Tarray.h">
+		<Unit filename="/home/angus/CLionProjects/graph/graph.cpp">
+			<Option target="graph"/>
+		</Unit>
+		<Unit filename="/home/angus/CLionProjects/graph/graph.h">
 			<Option target="graph"/>
 		</Unit>
 		<Unit filename="/home/angus/CLionProjects/graph/main.cpp">
