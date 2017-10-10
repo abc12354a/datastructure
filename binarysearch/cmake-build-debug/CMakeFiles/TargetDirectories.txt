@@ -1,0 +1,3 @@
+/home/angus/CLionProjects/binarysearch/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/angus/CLionProjects/binarysearch/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/angus/CLionProjects/binarysearch/cmake-build-debug/CMakeFiles/binarysearch.dir
