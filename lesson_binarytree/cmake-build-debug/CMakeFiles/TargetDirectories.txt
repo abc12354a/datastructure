@@ -1,3 +1,0 @@
-/home/angus/CLionProjects/lesson_binarytree/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/angus/CLionProjects/lesson_binarytree/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/angus/CLionProjects/lesson_binarytree/cmake-build-debug/CMakeFiles/lesson_binarytree.dir
