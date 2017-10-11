@@ -16,7 +16,10 @@ int main() {
     Post_Order_Travel(root_changed);
     cout<<endl;
     cout<<BsTree_Max(root_changed)->value<<"   ";
-    cout<<BsTree_Search(root_changed,99)->value;
-    //print_bstree(root_changed,0,0);
+    cout<<BsTree_Search(root_changed,99)->value<<"  value:";
+    cout<<root_changed->right->right->value<<"  ";
+    cout<<Predecer_BsTree(root_changed->right->right)->value<<" ";
+    cout<<Postdecer_BsTree(root_changed->right->right)->value<<endl;
+    print_bstree(root_changed,0,0);
     return 0;
 }

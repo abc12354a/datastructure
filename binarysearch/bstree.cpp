@@ -106,7 +106,7 @@ BsTree Del_Node(BsTree Tree, Node *node) {
 }
 Node *Predecer_BsTree(Node *node) {
     if(node->left!= nullptr)
-        return BsTree_Max(node);
+        return BsTree_Max(node->left);
     Node* Pnode = node->parent;
     while((Pnode!= nullptr) && (node == Pnode->left)){
         node = Pnode;
@@ -116,7 +116,7 @@ Node *Predecer_BsTree(Node *node) {
 }
 Node *Postdecer_BsTree(Node *node) {
     if(node->right!= nullptr)
-        return  BsTree_Mini(node);
+        return  BsTree_Mini(node->right);
     Node* Pnode = node->parent;
     while((Pnode!= nullptr)&&(node==Pnode->right)){
         node = Pnode;
