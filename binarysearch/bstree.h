@@ -18,8 +18,12 @@ void Post_Order_Travel(BsTree Tree);
 BsTree Insert_Node(BsTree Tree,Node* node);
 BsTree Insert_Value(BsTree Tree,Data value);
 BsTree Del_Node(BsTree Tree,Node* node);
+BsTree Del_Value(BsTree Tree,Data value);
 Node* BsTree_Search(BsTree Tree,Data value);
 Node* BsTree_Max(BsTree Tree);
 Node* BsTree_Mini(BsTree Tree);
 Node* BsTree_Search(BsTree Tree,Data value);
+void print_bstree(BsTree tree, Data key, int direction);
+Node* Predecer_BsTree(Node* node);
+Node* Postdecer_BsTree(Node* node);
 #endif //BINARYSEARCH_BSTREE_H

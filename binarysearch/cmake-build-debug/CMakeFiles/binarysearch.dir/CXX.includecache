@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/angus/CLionProjects/binarysearch/bstree.cpp
+bstree.h
+/home/angus/CLionProjects/binarysearch/bstree.h
+iostream
+-
+
+/home/angus/CLionProjects/binarysearch/bstree.h
+
+/home/angus/CLionProjects/binarysearch/main.cpp
+iostream
+-
+bstree.h
+/home/angus/CLionProjects/binarysearch/bstree.h
+
