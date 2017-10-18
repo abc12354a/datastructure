@@ -1,26 +1,24 @@
 //
 // Created by angus on 17-8-26.
+// Updated by angus on 17-10-17.
 //
 
 #ifndef STACK_STACK_H
 #define STACK_STACK_H
-#define MAX_SIZE 50
-#define INCREMENT 20
-template <class T>
-class SeqStack {
-    SeqStack(int size = MAX_SIZE);
-    void Push(T x);
-    void Makempty();
-    bool Isempty()const;
-    bool IsFull()const;
-    int GetSize()const;
-    T Pop();
-    T GetTop()const;
-    ~SeqStack(){delete []element;};
-private:
-    int maxsize;
-    int top;
-    T *element;
-    void overflow();
-};
+//链式栈
+//C99标准没有引用
+typedef int DataType;
+typedef struct StackNode{
+    DataType Value;
+    struct StackNode* Next;
+}*NodePtr,StackNode;
+typedef struct LinkStack{
+    NodePtr Top;
+    int Count;
+}LinkStack;
+void InitStack(LinkStack* mStack);
+bool PushStack(LinkStack* mStack,DataType e);
+bool PopStack(LinkStack* mStack,DataType *e);
+bool IsEmpty(LinkStack mStack);
+void TestStackFun();
 #endif //STACK_STACK_H

@@ -9,6 +9,8 @@
 /home/angus/CLionProjects/stack/main.cpp
 iostream
 -
+stack.h
+/home/angus/CLionProjects/stack/stack.h
 
 /home/angus/CLionProjects/stack/stack.cpp
 iostream

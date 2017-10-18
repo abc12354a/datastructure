@@ -4,60 +4,58 @@
 #include <iostream>
 #include "stack.h"
 using namespace std;
-template <class T>
-bool SeqStack<T>::IsFull() const {
-    return (top == maxsize-1)?true: false;
+
+//function:Init a Stack and set Top Value as 0;
+void InitStack(LinkStack *mStack) {
+    NodePtr mElement = (NodePtr) malloc(sizeof(StackNode));
+    mStack = (LinkStack *) malloc(sizeof(LinkStack));
+    mElement->Next = nullptr;
+    mElement->Value = 0;
+    mStack->Count = 0;
+    mStack->Top = mElement;
 }
-template <class T>
-bool SeqStack<T>::Isempty() const {
-    return (top == -1)?true:false;
+
+bool PushStack(LinkStack *mStack, DataType e) {
+    NodePtr mElement = (NodePtr) malloc(sizeof(StackNode));
+    if (mElement == nullptr)
+        return false;
+    mElement->Value = e;
+    mElement->Next = mStack->Top;
+    mStack->Top = mElement;
+    mStack->Count++;
+    return true;
 }
-template <class T>
-SeqStack<T>::SeqStack(int size):maxsize(size),top(-1) {
-    element = new T[maxsize];
+
+bool PopStack(LinkStack *mStack, DataType *e) {
+    NodePtr mElement;
+    if (IsEmpty(*mStack))
+        return false;
+    *e = mStack->Top->Value;
+    mElement = mStack->Top;
+    mStack->Top = mStack->Top->Next;
+    free(mElement);
+    mStack->Count--;
+    return true;
 }
-template <class T>
-void SeqStack<T>::Push(T x) {
-    if(IsFull())
-        overflow();
-    else
-        element[++top] = x;
+
+bool IsEmpty(LinkStack mStack) {
+    if (mStack.Count == 0)
+        return true;
+    return false;
 }
-template <class T>
-void SeqStack<T>::overflow() {
-    T *t = new T[maxsize+INCREMENT];
-    for (int i = 0; i < top ; ++i)
-        t[i] = element[i];
-    maxsize += INCREMENT;
-    delete []element;
-    element = t;
-}
-template <class T>
-T SeqStack<T>::GetTop() const {
-    if(Isempty())
-        return -1;
-    else
-        return element[top];
-}
-template <class T>
-T SeqStack<T>::Pop() {
-    if(Isempty())
-        return -1;
-    else{
-        return element[top--];
+
+void TestStackFun() {
+    LinkStack *Stack;
+    InitStack(Stack);
+    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    for (int i = 0; i < 10; i++) {
+        PushStack(Stack, a[i]);
     }
-}
-template <class T>
-int SeqStack<T>::GetSize() const {
-    if(Isempty())
-        return 0;
-    else if(IsFull())
-        return maxsize;
-    else{
-        return top+1;
+    for (int i = 0; i < 10; ++i) {
+        int *k = (int*)malloc(sizeof(int));
+        if(!PopStack(Stack,k))
+            std::cout<<"error"<<i;
+        else
+            std::cout<<*k<<" ";
     }
-}
-template <class T>
-void SeqStack<T>::Makempty() {
-    top = -1;
 }
