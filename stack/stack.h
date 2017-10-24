@@ -21,4 +21,6 @@ bool PushStack(LinkStack* mStack,DataType e);
 bool PopStack(LinkStack* mStack,DataType *e);
 bool IsEmpty(LinkStack mStack);
 void TestStackFun();
+bool GetTop(LinkStack* mStack,DataType *e);
+void ClearStack(LinkStack *mStack);
 #endif //STACK_STACK_H
