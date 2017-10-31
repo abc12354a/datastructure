@@ -22,8 +22,13 @@ void TraveGraph(MGraph *G);
 
 void TestFun();
 
-void MatrixDFS(MGraph *G, int i);
+void MatrixDFS(MGraph G);
 
+int Next_Vex(MGraph G,int v,int w);
+
+int First_Vex(MGraph G,int v);
+
+void DFS_Internal_MG(MGraph G,int* visited,int i);
 /***************************************/
 typedef struct EdgeNode {
     int Adjvex;

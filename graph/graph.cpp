@@ -31,7 +31,13 @@ void CreateGraph(MGraph *G) {
 }
 
 void TraveGraph(MGraph *G) {
+    cout<<"  ";
+    for(int i = 0;i<G->numVex;++i){
+        cout<<G->vex[i]<<"  ";
+    }
+    cout<<endl;
     for (int i = 0; i < G->numVex; ++i) {
+        cout<<G->vex[i]<<" ";
         for (int j = 0; j < G->numVex; ++j) {
             cout << G->arc[i][j] << "  ";
         }
@@ -43,7 +49,8 @@ void TestFun() {
     MGraph *Graph = (MGraph *) malloc(sizeof(MGraph));
     //CreateGraph(Graph);
     CreateMGraph_Auto(Graph);
-    TraveGraph(Graph);
+    //TraveGraph(Graph);
+    MatrixDFS(*Graph);
 }
 
 void CreateAdjGraph(GraphAdjList *G) {
@@ -88,8 +95,12 @@ void TestAdjGraph() {
     TraveAdjGraph(G);
 }
 
-void MatrixDFS(MGraph *G, int i) {
-
+void MatrixDFS(MGraph G) {
+    int visited[G.numVex+1] = {0};
+    for(int i = 0;i<G.numVex;++i){
+        if(!visited[i])
+            DFS_Internal_MG(G,visited,i);
+    }
 }
 
 void CreateMGraph_Auto(MGraph *G) {
@@ -116,5 +127,35 @@ void CreateMGraph_Auto(MGraph *G) {
         G->arc[p1][p2] = 1;
         G->arc[p2][p1] = 1;
         //无向图
+    }
+}
+//return the next node of v to w;
+int Next_Vex(MGraph G, int v, int w) {
+    if(v<0||(v>G.numVex-1)||w<0||w>(G.numVex)){
+        return -1;
+    }
+    for(int i = w+1;i<G.numVex;++i){
+        if(G.arc[v][i] > 0)
+            return i;
+    }
+    return -1;
+}
+int First_Vex(MGraph G, int v) {
+    if(v<0||(v>G.numVex-1)){
+        return -1;
+    }
+    for(int i = 0;i<G.numVex;++i){
+        if(G.arc[v][i] > 0)
+            return i;
+    }
+    return -1;
+}
+
+void DFS_Internal_MG(MGraph G,int *visited,int i) {
+    visited[i] = 1;
+    cout<<G.vex[i]<<" ";
+    for(int w = First_Vex(G,i);w>0;w = Next_Vex(G,i,w)){
+        if(!visited[w])
+            DFS_Internal_MG(G,visited,w);
     }
 }
