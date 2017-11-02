@@ -29,6 +29,8 @@ int Next_Vex(MGraph G,int v,int w);
 int First_Vex(MGraph G,int v);
 
 void DFS_Internal_MG(MGraph G,int* visited,int i);
+
+void BFS_MG(MGraph G);
 /***************************************/
 typedef struct EdgeNode {
     int Adjvex;

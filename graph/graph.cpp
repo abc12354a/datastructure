@@ -51,6 +51,8 @@ void TestFun() {
     CreateMGraph_Auto(Graph);
     //TraveGraph(Graph);
     MatrixDFS(*Graph);
+    cout<<endl;
+    BFS_MG(*Graph);
 }
 
 void CreateAdjGraph(GraphAdjList *G) {
@@ -106,7 +108,7 @@ void MatrixDFS(MGraph G) {
 void CreateMGraph_Auto(MGraph *G) {
     int numVex = 8;
     int numEdge = 6;
-    cout<<"the num of Vex and Edge is "<<numVex<<" and"<<numEdge<<endl;
+    cout<<"the num of Vex and Edge is "<<numVex<<" and "<<numEdge<<endl;
     G->numVex = numVex;
     G->numEdge = numEdge;
     char VexNode[numVex] = {'a','b','c','d','e','f','g','h'};
@@ -157,5 +159,30 @@ void DFS_Internal_MG(MGraph G,int *visited,int i) {
     for(int w = First_Vex(G,i);w>0;w = Next_Vex(G,i,w)){
         if(!visited[w])
             DFS_Internal_MG(G,visited,w);
+    }
+}
+
+void BFS_MG(MGraph G) {
+    int j = 0;
+    int head = 0;
+    int rear = 0;
+    int queue[G.numVex+1];
+    int visited[G.numVex+1] = {0};
+    for(int i = 0;i<G.numVex;++i){
+        if(!visited[i]){
+            visited[i] = 1;
+            cout<<G.vex[i]<<" ";
+            queue[rear++] = i;//enqueue
+        }
+        while(head != rear){
+            j = queue[head++];//dequeue
+            for(int k = First_Vex(G,j);k>=0;k = Next_Vex(G,j,k)){
+                if(!visited[k]){
+                    visited[k] = 1;
+                    cout<<G.vex[k]<<" ";
+                    queue[rear++] = k;
+                }
+            }
+        }
     }
 }
