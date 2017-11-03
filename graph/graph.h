@@ -52,4 +52,24 @@ void TraveAdjGraph(GraphAdjList *G);
 
 void TestAdjGraph();
 
+/***************************************/
+typedef struct MGraph_Kruskal{
+    VexType Vex[MAX_Vex];
+    int numVex,numEdge;
+    EdgeType arc[MAX_Vex][MAX_Vex];
+}MKGraph;
+typedef struct Edge_Kruskal{
+    VexType start;
+    VexType end;
+    int weight;
+}MKEdge;
+void CreateMKGraph_Auto(MKGraph *G);
+
+void Kruskal(MKGraph G);
+
+int GetPostion_K(MKGraph G,VexType Vex);
+
+int Fisrt_Vex_KMG(MKGraph G,int v);
+
+int Next_Vex_KMG(MKGraph G,int v,int w);
 #endif //GRAPH_GRAPH_H

@@ -25,14 +25,14 @@ int main(){
         }
     }
     else{
-         while(length!=1) {
-             start = FillMatrix(M, start, length, start_x, start_y);
-             length -= 2;
-             start_x += 1;
-             start_y += 1;
-             Ncount++;
-             //start+=1;
-         }
+        while(length!=1) {
+            start = FillMatrix(M, start, length, start_x, start_y);
+            length -= 2;
+            start_x += 1;
+            start_y += 1;
+            Ncount++;
+            //start+=1;
+        }
         M[Ncount][Ncount] = N*N;
     }
 

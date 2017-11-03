@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="OJ_1021"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/angus/CLionProjects/OJ-1021/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/angus/CLionProjects/OJ-1021/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/angus/CLionProjects/OJ-1021/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OJ_1021">
+				<Option output="/home/angus/CLionProjects/OJ-1021/cmake-build-debug/OJ_1021" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/angus/CLionProjects/OJ-1021/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 OJ_1021"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OJ_1021/fast">
+				<Option output="/home/angus/CLionProjects/OJ-1021/cmake-build-debug/OJ_1021" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/angus/CLionProjects/OJ-1021/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 OJ_1021/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/angus/CLionProjects/OJ-1021/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/angus/CLionProjects/OJ-1021/main.cpp">
+			<Option target="OJ_1021"/>
+		</Unit>
+		<Unit filename="/home/angus/CLionProjects/OJ-1021/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

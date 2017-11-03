@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/OJ_1021.dir/main.cpp.o  -o OJ_1021 

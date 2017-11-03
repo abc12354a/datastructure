@@ -7,10 +7,10 @@
 #IncludeRegexTransform: 
 
 /home/angus/CLionProjects/TEST/main.cpp
-stdlib.h
+iostream
 -
-stdio.h
+iomanip
 -
-time.h
+vector
 -
 

@@ -29,7 +29,6 @@ void CreateGraph(MGraph *G) {
         G->arc[y][x] = 1;
     }
 }
-
 void TraveGraph(MGraph *G) {
     cout<<"  ";
     for(int i = 0;i<G->numVex;++i){
@@ -44,7 +43,6 @@ void TraveGraph(MGraph *G) {
         cout << endl;
     }
 }
-
 void TestFun() {
     MGraph *Graph = (MGraph *) malloc(sizeof(MGraph));
     //CreateGraph(Graph);
@@ -54,7 +52,6 @@ void TestFun() {
     cout<<endl;
     BFS_MG(*Graph);
 }
-
 void CreateAdjGraph(GraphAdjList *G) {
     EdgeNode *e;
     cout << "input vexs and edges" << endl;
@@ -77,7 +74,6 @@ void CreateAdjGraph(GraphAdjList *G) {
         G->adjList[y].FirstNode = e;
     }
 }
-
 void TraveAdjGraph(GraphAdjList *G) {
     for (int i = 0; i < G->numVex; ++i) {
         cout << i << " ";
@@ -90,13 +86,11 @@ void TraveAdjGraph(GraphAdjList *G) {
         cout << endl;
     }
 }
-
 void TestAdjGraph() {
     GraphAdjList *G = (GraphAdjList *) malloc(sizeof(GraphAdjList));
     CreateAdjGraph(G);
     TraveAdjGraph(G);
 }
-
 void MatrixDFS(MGraph G) {
     int visited[G.numVex+1] = {0};
     for(int i = 0;i<G.numVex;++i){
@@ -104,7 +98,6 @@ void MatrixDFS(MGraph G) {
             DFS_Internal_MG(G,visited,i);
     }
 }
-
 void CreateMGraph_Auto(MGraph *G) {
     int numVex = 8;
     int numEdge = 6;
@@ -152,7 +145,6 @@ int First_Vex(MGraph G, int v) {
     }
     return -1;
 }
-
 void DFS_Internal_MG(MGraph G,int *visited,int i) {
     visited[i] = 1;
     cout<<G.vex[i]<<" ";
@@ -161,7 +153,6 @@ void DFS_Internal_MG(MGraph G,int *visited,int i) {
             DFS_Internal_MG(G,visited,w);
     }
 }
-
 void BFS_MG(MGraph G) {
     int j = 0;
     int head = 0;
@@ -185,4 +176,57 @@ void BFS_MG(MGraph G) {
             }
         }
     }
+}
+void Kruskal(MKGraph G) {
+
+}
+void CreateMKGraph_Auto(MKGraph *G) {
+    VexType VexNode[] = {'a','b','c','d','e','f','g'};
+    int Matrix[][9] = {
+            {0,12,INIFINITY,INIFINITY,INIFINITY,16,14},
+            {12,0,10,INIFINITY,INIFINITY,7,INIFINITY},
+            {INIFINITY,10,0,3,5,6,INIFINITY},
+            {INIFINITY,INIFINITY,3,0,4,INIFINITY,INIFINITY},
+            {INIFINITY,INIFINITY,5,4,0,2,8},
+            {16,7,6,INIFINITY,2,0,9},
+            {14,INIFINITY,INIFINITY,INIFINITY,8,9,0}
+    };
+    int numVex = 8;
+    G->numVex = numVex;
+    for(int i = 0;i<numVex;++i){
+        G->Vex[i] = VexNode[i];
+    }
+    for(int i = 0;i<numVex;++i){
+        for(int j = 0;j<numVex;++j){
+            G->arc[i][j] = Matrix[i][j];
+        }
+    }
+    for(int i = 0;i<G->numVex;++i){
+        for(int j = 0;j<G->numVex;++j){
+            if(i != j&&G->arc[i][j] != INIFINITY)
+                G->numEdge++;
+        }
+    }
+    G->numEdge = G->numEdge/2;
+}
+
+int GetPostion_K(MKGraph G, VexType Vex) {
+    for(int i = 0;i<G.numVex;++i){
+        if(G.Vex[i] == Vex)
+            return i;
+    }
+    return -1;
+}
+
+int Fisrt_Vex_KMG(MKGraph G, int v) {
+    if(v<0||v>(G.numVex-1))
+        return -1;
+    for(int i = 0;i<G.numVex;++i){
+        if(G.arc[v][i] != 0&& G.arc[v][i]!=INIFINITY)
+            return i;
+    }
+}
+
+int Next_Vex_KMG(MKGraph G, int v, int w) {
+
 }

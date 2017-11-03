@@ -47,8 +47,8 @@
       <file leaf-file-name="tree.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tree.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="108" column="1" lean-forward="false" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
+            <state relative-caret-position="288">
+              <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
                 <element signature="e#229#459#0" expanded="false" />
@@ -173,14 +173,15 @@
       <workItem from="1504357054960" duration="16733000" />
       <workItem from="1504882856245" duration="211000" />
       <workItem from="1507553630797" duration="14000" />
+      <workItem from="1509696676254" duration="22000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23955000" />
+    <option name="totallyTimeSpent" value="23977000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="36" width="1920" height="1044" extended-state="6" />
+    <frame x="229" y="36" width="1920" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11770833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -217,6 +218,52 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tree.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1944">
+          <caret line="108" column="1" lean-forward="false" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#229#459#0" expanded="false" />
+            <element signature="e#460#631#0" expanded="false" />
+            <element signature="e#632#763#0" expanded="false" />
+            <element signature="e#764#925#0" expanded="false" />
+            <element signature="e#926#1222#0" expanded="false" />
+            <element signature="e#1223#1271#0" expanded="false" />
+            <element signature="e#1272#1915#0" expanded="false" />
+            <element signature="e#1916#2118#0" expanded="false" />
+            <element signature="e#2119#2436#0" expanded="false" />
+            <element signature="e#2437#2797#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -491,8 +538,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tree.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="108" column="1" lean-forward="false" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
+        <state relative-caret-position="288">
+          <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
             <element signature="e#229#459#0" expanded="false" />
