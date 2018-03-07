@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/angus/CLionProjects/TEST/main.cpp
+/home/angus/CLionProjects/datastructure/TEST/main.cpp
 iostream
 -
 vector

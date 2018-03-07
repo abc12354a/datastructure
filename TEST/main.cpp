@@ -2,8 +2,8 @@
 #include <vector>
 #define LENGTH(array) ((sizeof(array))/(sizeof(array[0])))
 #define SWAP(a,b) (a^=b,b^=a,a^=b)
-using namespace std;
 #define Max_Size 100
+using namespace std;
 void Select_Sort(int a[],int n){
     int i,j,min;
     for(i = 0;i<n;++i){
@@ -16,14 +16,35 @@ void Select_Sort(int a[],int n){
             SWAP(a[i],a[min]);
     }
 }
+class TreeNode{
+public:
+    int val;
+    TreeNode *left,*right;
+    TreeNode(int val){
+        this->val = val;
+        this->left = NULL;
+        this->right = NULL;
+    }
+};
+vector <int> temp;
+vector <int> midarray;
+void preOrderTravel(TreeNode* root){
+    if(root!=NULL){
+        //a.push_back(root->val);
+        cout<<root->val<<"  ";
+        preOrderTravel(root->left);
+        preOrderTravel(root->right);
+    }
+}
 int main(){
-    int a[] = {2,4,3,1,5,7,9};
+
+}
+    /*int a[] = {2,4,3,1,5,7,9};
     int length = LENGTH(a);
     Select_Sort(a,length);
     for(int i = 0;i<length;++i){
         cout<<a[i]<<" ";
-    }
-}
+    }*/
 /*typedef struct Tree{
     int index;
     Tree* left;
