@@ -4,6 +4,44 @@
 #define SWAP(a,b) (a^=b,b^=a,a^=b)
 #define Max_Size 100
 using namespace std;
+class SQList{
+public:
+    int maxlength;
+    int* list;
+    int length;
+    SQList(int size = 2){
+        this->list  = new int[size];
+        this->maxlength = size;
+        this->length = 0;
+    }
+};
+void Add_To_Tail(SQList &L,int data){
+    if(L.length+1 > L.maxlength){
+        std::cout<<"out of range, try to get sapce...."<<endl;
+        int* TempList = new int[L.length+L.maxlength];
+        for (int i = 0; i < L.length; ++i) {
+            TempList[i] = L.list[i];
+        }
+        L.maxlength = L.length + L.maxlength;
+        L.list = TempList;
+        L.list[L.length] = data;
+        L.length += 1;
+    }
+    else{
+        L.list[L.length] = data;
+        L.length += 1;
+    }
+}
+
+void Print_List(SQList &L){
+    if(L.length>=1)
+    for (int i = 0; i < L.length; ++i) {
+        std::cout<<L.list[i]<<" ";
+    }
+}
+void Insert_To_List(SQList &L,int loc, int data){
+    
+}
 void Select_Sort(int a[],int n){
     int i,j,min;
     for(i = 0;i<n;++i){
@@ -26,6 +64,7 @@ public:
         this->right = NULL;
     }
 };
+
 vector <int> temp;
 vector <int> midarray;
 void preOrderTravel(TreeNode* root){
@@ -36,8 +75,16 @@ void preOrderTravel(TreeNode* root){
         preOrderTravel(root->right);
     }
 }
+int findmid(vector <int> a,int low, int high){
+    return a[low+(high-low)/2];
+}
 int main(){
-
+    SQList list;
+    Add_To_Tail(list,5);
+    Add_To_Tail(list,8);
+    Add_To_Tail(list,6);
+    Add_To_Tail(list,10);
+    Print_List(list);
 }
     /*int a[] = {2,4,3,1,5,7,9};
     int length = LENGTH(a);
