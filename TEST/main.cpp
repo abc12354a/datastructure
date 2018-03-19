@@ -9,7 +9,7 @@ public:
     int maxlength;
     int* list;
     int length;
-    SQList(int size = 2){
+    SQList(int size = 3){
         this->list  = new int[size];
         this->maxlength = size;
         this->length = 0;
@@ -40,7 +40,19 @@ void Print_List(SQList &L){
     }
 }
 void Insert_To_List(SQList &L,int loc, int data){
-    
+    if(loc>L.length || L.length+1 > L.maxlength){
+        cout<<"out of range"<<endl;
+    }
+    else{
+        for (int i = L.length; i > loc ; --i) {
+            L.list[i] = L.list[i-1];
+        }
+        L.list[loc] = data;
+        L.length++;
+    }
+}
+int Del_From_List(SQList &L,int loc){
+
 }
 void Select_Sort(int a[],int n){
     int i,j,min;
@@ -64,7 +76,42 @@ public:
         this->right = NULL;
     }
 };
+void Sort_SQList(SQList &L){
+    if(L.length <= 1){
+        std::cout<<"List is too short"<<endl;
+    }else{
+        
+    }
+}
+void Del_Min(SQList &L){
+    if(L.length >= 1) {
+        int temp = L.list[0];
+        int loc = 0;
+        for (int i = 0; i < L.length; ++i) {
+            if (temp > L.list[i]) {
+                temp = L.list[i];
+                loc = i;
+            }
+        }
+        L.list[loc] = L.list[L.length - 1];
+        L.length--;
+    }
+    else{
+        std::cout<<"List is empty"<<endl;
+    }
 
+}
+SQList MergeList_InOrder(SQList &L1, SQList &L2){
+    if (L1.length <1){
+        return L2;
+    }
+    else if(L2.length <1){
+        return L1;
+    }
+    else{
+
+    }
+}
 vector <int> temp;
 vector <int> midarray;
 void preOrderTravel(TreeNode* root){
@@ -80,10 +127,14 @@ int findmid(vector <int> a,int low, int high){
 }
 int main(){
     SQList list;
-    Add_To_Tail(list,5);
+    Add_To_Tail(list,22);
     Add_To_Tail(list,8);
     Add_To_Tail(list,6);
     Add_To_Tail(list,10);
+    Insert_To_List(list,3,99);
+    Print_List(list);
+    Del_Min(list);
+    cout<<endl;
     Print_List(list);
 }
     /*int a[] = {2,4,3,1,5,7,9};
