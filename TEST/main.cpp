@@ -3,13 +3,14 @@
 #define LENGTH(array) ((sizeof(array))/(sizeof(array[0])))
 #define SWAP(a,b) (a^=b,b^=a,a^=b)
 #define Max_Size 100
+#define Max_Num 99
 using namespace std;
 class SQList{
 public:
     int maxlength;
     int* list;
     int length;
-    SQList(int size = 3){
+    SQList(int size = 99){
         this->list  = new int[size];
         this->maxlength = size;
         this->length = 0;
@@ -33,7 +34,8 @@ void Add_To_Tail(SQList &L,int data){
     }
 }
 
-void Print_List(SQList &L){
+void Print_List(SQList L){
+    cout<<endl;
     if(L.length>=1)
     for (int i = 0; i < L.length; ++i) {
         std::cout<<L.list[i]<<" ";
@@ -44,7 +46,7 @@ void Insert_To_List(SQList &L,int loc, int data){
         cout<<"out of range"<<endl;
     }
     else{
-        for (int i = L.length; i > loc ; --i) {
+        for (int i = L.length; i >= loc ; --i) {
             L.list[i] = L.list[i-1];
         }
         L.list[loc] = data;
@@ -76,11 +78,28 @@ public:
         this->right = NULL;
     }
 };
-void Sort_SQList(SQList &L){
+SQList Sort_SQList(SQList L){
+    cout<<"start ";
     if(L.length <= 1){
         std::cout<<"List is too short"<<endl;
+        return L;
     }else{
-        
+        SQList NL(L.length);
+        int max_temp = L.list[0];
+        cout<<"length is  "<<L.length<<endl;
+        for (int j = 0; j < L.length; ++j) {
+            for (int i = 0; i < L.length; ++i) {
+                if(max_temp > L.list[i]){
+                    max_temp = L.list[i];
+                    L.list[i] = Max_Num;
+                }
+            }
+            NL.list[j] = max_temp;
+            NL.length ++;
+            max_temp = Max_Num;
+        }
+        cout<<" over";
+        return NL;
     }
 }
 void Del_Min(SQList &L){
@@ -109,7 +128,9 @@ SQList MergeList_InOrder(SQList &L1, SQList &L2){
         return L1;
     }
     else{
+        for (int i = 0; i < L1.length; ++i) {
 
+        }
     }
 }
 vector <int> temp;
@@ -131,8 +152,10 @@ int main(){
     Add_To_Tail(list,8);
     Add_To_Tail(list,6);
     Add_To_Tail(list,10);
-    Insert_To_List(list,3,99);
+    Insert_To_List(list,2,12);
     Print_List(list);
+    cout<<endl;
+    Print_List(Sort_SQList(list));
     Del_Min(list);
     cout<<endl;
     Print_List(list);
