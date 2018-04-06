@@ -23,3 +23,22 @@ furnish     布置/供应
 barren      贫瘠/不孕
 curse       诅咒
 advent      来临
+scrutiny    监视
+soak        浸泡
+dwelling    住所
+ruthless    残忍的
+elapse      流逝(时间)
+coupon      优惠券
+amend       修正
+cite        表彰/引用
+mingle      交往/混合
+{
+    易混淆   in
+    invest  投资
+    infest  骚扰/寄生
+    invent  发明
+    invite  邀请
+    intensive   加强的
+}
+exaggerate  夸大
+irrational  不理智的
