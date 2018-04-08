@@ -42,3 +42,8 @@ mingle      交往/混合
 }
 exaggerate  夸大
 irrational  不理智的
+innate      固有的
+obstinate   固执的
+decree      命令/颁布
+adhesive    粘着剂
+acclam      欢呼
