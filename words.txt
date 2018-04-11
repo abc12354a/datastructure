@@ -55,3 +55,6 @@ hind        后腿
 crafty      狡猾的
 exotic      异国的
 repressive  强制的/压抑的
+conceit     自负的
+defer       延期
+orient      东方/定位
