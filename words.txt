@@ -58,3 +58,25 @@ repressive  强制的/压抑的
 conceit     自负的
 defer       延期
 orient      东方/定位
+perplex     困惑
+peril       危险
+sieve       筛选
+peculiar    奇怪的
+conspiracy  密谋
+boastful    自大的
+sponsor     赞助人
+rapture     狂喜
+consulate   领事馆
+missionary  传教士
+evince      表明
+vie         竞争
+venue       审判地/犯罪发生点
+reassure    消除疑虑
+{
+    易混淆
+    expend      花费
+    expand      扩大
+    expectant   期待的/怀孕的
+    expound     详细说明
+}
+fume        愤怒
