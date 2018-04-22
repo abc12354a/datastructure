@@ -80,3 +80,12 @@ reassure    消除疑虑
     expound     详细说明
 }
 fume        愤怒
+{
+    易混淆
+    rigorous    严格的
+    righteous   正直的
+    rigor       严厉
+    decorous    端庄的
+    traitorous  叛徒的
+}
+conscience  良知
